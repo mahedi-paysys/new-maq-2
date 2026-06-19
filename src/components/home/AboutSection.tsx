@@ -102,13 +102,35 @@ export function AboutSection() {
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  className="rounded-2xl bg-white/[0.04] border border-white/08 p-4 text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.4 + i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="group rounded-2xl bg-white/[0.04] border border-white/08 p-4 text-center cursor-pointer"
+                  initial={{ opacity: 0, y: 20, scale: 0.85 }}
+                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={{
+                    delay: 0.4 + i * 0.08,
+                    duration: 0.5,
+                    ease: [0.34, 1.56, 0.64, 1],
+                  }}
+                  whileHover={{
+                    scale: 1.07,
+                    y: -4,
+                    borderColor: 'rgba(234, 179, 8, 0.45)',
+                    backgroundColor: 'rgba(234, 179, 8, 0.08)',
+                    boxShadow: '0 8px 24px -8px rgba(234, 179, 8, 0.35)',
+                    transition: { duration: 0.12, ease: 'easeOut' },
+                  }}
                 >
-                  <p className="text-xl font-bold text-brand">{stat.value}</p>
-                  <p className="text-[10px] text-white/40 leading-tight mt-1">{stat.label}</p>
+                  <motion.p
+                    className="text-xl font-bold text-brand"
+                    whileHover={{
+                      scale: 1.12,
+                      transition: { duration: 0.1, ease: 'easeOut' },
+                    }}
+                  >
+                    {stat.value}
+                  </motion.p>
+                  <p className="text-[10px] text-white/40 leading-tight mt-1 group-hover:text-white/60 transition-colors duration-150">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
