@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { Download, ArrowRight } from 'lucide-react'
 import {
   ceoMessage,
@@ -7,7 +7,7 @@ import {
   mission,
   vision,
   principles,
-  offerings,
+  // offerings,
 } from '@/data/content'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/AnimatedSection'

@@ -5,9 +5,9 @@ import { Footer } from '@/components/layout/Footer'
 import { PageTransition } from '@/components/layout/PageTransition'
 import { HomePage } from '@/pages/HomePage'
 import { AboutPage } from '@/pages/AboutPage'
-import { CompanyProfilePage } from '@/pages/about/CompanyProfilePage'
-import { LeadershipPage } from '@/pages/about/LeadershipPage'
-import { MissionVisionPage } from '@/pages/about/MissionVisionPage'
+// import { CompanyProfilePage } from '@/pages/about/CompanyProfilePage'
+// import { LeadershipPage } from '@/pages/about/LeadershipPage'
+// import { MissionVisionPage } from '@/pages/about/MissionVisionPage'
 import { ProjectsPage } from '@/pages/ProjectsPage'
 import { ProjectDetailPage } from '@/pages/ProjectDetailPage'
 import { EliteWarehousePage } from '@/pages/EliteWarehousePage'
@@ -37,9 +37,9 @@ export function AppRouter() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={withTransition(<HomePage />)} />
             <Route path="/about" element={withTransition(<AboutPage />)} />
-            <Route path="/about/company-profile" element={withTransition(<CompanyProfilePage />)} />
-            <Route path="/about/leadership" element={withTransition(<LeadershipPage />)} />
-            <Route path="/about/mission-vision" element={withTransition(<MissionVisionPage />)} />
+            {/* {/* <Route path="/about/company-profile" element={withTransition(<CompanyProfilePage />)} /> */}
+            {/* <Route path="/about/leadership" element={withTransition(<LeadershipPage />)} />
+            <Route path="/about/mission-vision" element={withTransition(<MissionVisionPage />)} /> */}
 
             <Route path="/services" element={withTransition(<ServicesPage />)} />
             <Route path="/services/elite-warehouse-rental" element={withTransition(<EliteWarehouseRentalPage />)} />
