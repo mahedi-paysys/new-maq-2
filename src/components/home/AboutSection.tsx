@@ -34,9 +34,9 @@ const faqs = [
 ]
 
 export function AboutSection() {
-  const [openIndex, setOpenIndex] = useState<number>(0)
+  const [openIndex, setOpenIndex] = useState<number>(-1)
   const containerRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(containerRef, { once: true, margin: '-80px' })
+  const isInView = useInView(containerRef, { once: true, margin: '-100px' })
 
   return (
     <section id="about" className="py-24 md:py-36 overflow-hidden" ref={containerRef}>
@@ -45,7 +45,7 @@ export function AboutSection() {
         <motion.div
           className="flex items-center gap-3 mb-4"
           initial={{ opacity: 0, x: -30 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="w-8 h-px bg-brand" />
@@ -58,7 +58,7 @@ export function AboutSection() {
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-tight max-w-2xl mb-16 md:mb-24"
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
           We Believe Great{' '}
@@ -72,16 +72,18 @@ export function AboutSection() {
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Main image */}
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
-              <img
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] group/img">
+              <motion.img
                 src="/assets/about-us-section.jpeg"
                 alt="MAQ Builders – Professional Construction Team"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -104,7 +106,7 @@ export function AboutSection() {
                   key={stat.label}
                   className="group rounded-2xl bg-surface border border-border shadow-soft p-4 text-center cursor-pointer"
                   initial={{ opacity: 0, y: 20, scale: 0.85 }}
-                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.85 }}
                   transition={{
                     delay: 0.4 + i * 0.08,
                     duration: 0.5,
@@ -143,7 +145,7 @@ export function AboutSection() {
           {/* Right – accordion */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Intro text */}
@@ -161,6 +163,9 @@ export function AboutSection() {
                 return (
                   <motion.div
                     key={i}
+                    /* Naya Add Kiya Hai */
+                    onMouseEnter={() => setOpenIndex(i)}
+                    onMouseLeave={() => setOpenIndex(-1)}
                     className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen
                       ? 'border-brand/25 bg-brand/[0.05]'
                       : 'border-border bg-surface hover:border-ink/15 shadow-soft'
@@ -171,7 +176,6 @@ export function AboutSection() {
                   >
                     <button
                       type="button"
-                      onClick={() => setOpenIndex(isOpen ? -1 : i)}
                       className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group"
                     >
                       <span
@@ -213,7 +217,7 @@ export function AboutSection() {
             <motion.div
               className="mt-8"
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
             >
               <Link
