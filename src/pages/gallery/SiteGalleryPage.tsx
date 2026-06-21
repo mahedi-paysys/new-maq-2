@@ -19,7 +19,7 @@ export function SiteGalleryPage() {
                     loading="lazy"
                   />
                 </div>
-                <p className="p-4 text-sm font-medium text-white/80">{item.title}</p>
+                <p className="p-4 text-sm font-medium text-ink">{item.title}</p>
               </div>
             </Reveal>
           ))}

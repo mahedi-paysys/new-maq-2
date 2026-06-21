@@ -140,7 +140,7 @@ function Lightbox({ items, index, onClose, onNext, onPrev }: LightboxProps) {
                 className="h-1 rounded-full transition-all duration-300"
                 style={{
                   width: i === index ? '24px' : '6px',
-                  background: i === index ? '#f5b800' : 'rgba(255,255,255,0.2)',
+                  background: i === index ? '#f0b400' : 'rgba(255,255,255,0.2)',
                 }}
               />
             ))}
@@ -205,7 +205,7 @@ export function GallerySection() {
                 </span>
               </motion.div>
               <motion.h2
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-white"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -228,7 +228,7 @@ export function GallerySection() {
                   className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 border ${
                     activeCategory === cat
                       ? 'bg-brand text-black border-brand'
-                      : 'border-white/10 text-white/50 hover:text-white hover:border-white/25 bg-transparent'
+                      : 'border-ink/15 text-ink-muted hover:text-ink hover:border-ink/30 bg-transparent'
                   }`}
                 >
                   {cat}
@@ -302,13 +302,13 @@ export function GallerySection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            <div className="flex items-center gap-2 text-white/30 text-sm">
+            <div className="flex items-center gap-2 text-ink-faint text-sm">
               <Grid3x3 size={15} />
               <span>{filtered.length} photos in this collection</span>
             </div>
             <Link
               to="/gallery"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-white transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors group"
             >
               View All Photos
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />

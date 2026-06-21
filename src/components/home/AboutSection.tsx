@@ -56,7 +56,7 @@ export function AboutSection() {
 
         {/* Main headline */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight max-w-2xl mb-16 md:mb-24"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-tight max-w-2xl mb-16 md:mb-24"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -102,7 +102,7 @@ export function AboutSection() {
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  className="group rounded-2xl bg-white/[0.04] border border-white/08 p-4 text-center cursor-pointer"
+                  className="group rounded-2xl bg-surface border border-border shadow-soft p-4 text-center cursor-pointer"
                   initial={{ opacity: 0, y: 20, scale: 0.85 }}
                   animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                   transition={{
@@ -113,8 +113,8 @@ export function AboutSection() {
                   whileHover={{
                     scale: 1.07,
                     y: -4,
-                    borderColor: 'rgba(234, 179, 8, 0.45)',
-                    backgroundColor: 'rgba(234, 179, 8, 0.08)',
+                    borderColor: 'rgba(240, 180, 0, 0.45)',
+                    backgroundColor: 'rgba(240, 180, 0, 0.08)',
                     boxShadow: '0 8px 24px -8px rgba(234, 179, 8, 0.35)',
                     transition: { duration: 0.12, ease: 'easeOut' },
                   }}
@@ -128,7 +128,7 @@ export function AboutSection() {
                   >
                     {stat.value}
                   </motion.p>
-                  <p className="text-[10px] text-white/40 leading-tight mt-1 group-hover:text-white/60 transition-colors duration-150">
+                  <p className="text-[10px] text-ink-faint leading-tight mt-1 group-hover:text-ink-muted transition-colors duration-150">
                     {stat.label}
                   </p>
                 </motion.div>
@@ -147,8 +147,8 @@ export function AboutSection() {
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Intro text */}
-            <p className="text-white/60 text-[15px] leading-relaxed mb-8">
-              The name <span className="text-white font-medium">MAQ GROUP OF COMPANIES</span> is
+            <p className="text-ink-muted text-[15px] leading-relaxed mb-8">
+              The name <span className="text-ink font-medium">MAQ GROUP OF COMPANIES</span> is
               synonymous with excellence, quality, commitment and personalized service. Founded in
               2019, we have built a reputation as a developer of integrity — combining vision with
               precision to shape Pakistan's industrial landscape.
@@ -163,7 +163,7 @@ export function AboutSection() {
                     key={i}
                     className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen
                       ? 'border-brand/25 bg-brand/[0.05]'
-                      : 'border-white/08 bg-white/[0.02] hover:border-white/15'
+                      : 'border-border bg-surface hover:border-ink/15 shadow-soft'
                       }`}
                     initial={{ opacity: 0, y: 16 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -175,7 +175,7 @@ export function AboutSection() {
                       className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group"
                     >
                       <span
-                        className={`text-sm font-semibold transition-colors duration-300 ${isOpen ? 'text-brand' : 'text-white group-hover:text-brand'
+                        className={`text-sm font-semibold transition-colors duration-300 ${isOpen ? 'text-brand' : 'text-ink group-hover:text-brand'
                           }`}
                       >
                         {item.q}
@@ -183,7 +183,7 @@ export function AboutSection() {
                       <span
                         className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen
                           ? 'bg-brand text-black rotate-0'
-                          : 'bg-white/08 text-white/60'
+                          : 'bg-ink/8 text-ink-muted'
                           }`}
                       >
                         {isOpen ? <Minus size={14} /> : <Plus size={14} />}
@@ -199,7 +199,7 @@ export function AboutSection() {
                         >
                           <div className="px-6 pb-5">
                             <div className="w-full h-px bg-brand/15 mb-4" />
-                            <p className="text-sm text-white/55 leading-relaxed">{item.a}</p>
+                            <p className="text-sm text-ink-muted leading-relaxed">{item.a}</p>
                           </div>
                         </motion.div>
                       )}
@@ -218,7 +218,7 @@ export function AboutSection() {
             >
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-white transition-colors group"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors group"
               >
                 Our Full Story
                 <span className="w-8 h-8 rounded-full border border-brand/40 flex items-center justify-center group-hover:bg-brand group-hover:border-brand transition-all">

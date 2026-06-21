@@ -60,7 +60,7 @@ export function HeroSearchBar() {
       transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="relative"
     >
-      <div className="glass-dark rounded-2xl md:rounded-full border border-white/10 shadow-elevated overflow-visible">
+      <div className="glass-dark rounded-2xl md:rounded-full border border-ink/10 shadow-elevated overflow-visible">
         <div className="flex flex-col lg:flex-row items-stretch gap-1 p-2 md:p-2.5">
           {filters.map((filter, index) => {
             const Icon = filter.icon
@@ -80,13 +80,13 @@ export function HeroSearchBar() {
                     'w-full flex items-center gap-3 px-4 md:px-5 py-3.5 md:py-4 rounded-xl md:rounded-full transition-all duration-300 text-left group',
                     isOpen
                       ? 'bg-brand/10 ring-1 ring-brand/30'
-                      : 'hover:bg-white/5'
+                      : 'hover:bg-ink/5'
                   )}
                 >
                   <div
                     className={cn(
                       'w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors',
-                      isOpen ? 'bg-brand/20' : 'bg-white/5 group-hover:bg-brand/10'
+                      isOpen ? 'bg-brand/20' : 'bg-ink/5 group-hover:bg-brand/10'
                     )}
                   >
                     <Icon size={18} className={isOpen ? 'text-brand' : 'text-ink-muted'} />
@@ -115,7 +115,7 @@ export function HeroSearchBar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.96 }}
                       transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      className="absolute top-full left-0 right-0 mt-2 z-30 rounded-xl glass-dark border border-white/10 shadow-elevated py-2 overflow-hidden"
+                      className="absolute top-full left-0 right-0 mt-2 z-30 rounded-xl glass-dark border border-ink/10 shadow-elevated py-2 overflow-hidden"
                     >
                       {filter.options.map((opt, i) => (
                         <motion.button
@@ -132,7 +132,7 @@ export function HeroSearchBar() {
                             'w-full px-5 py-3 text-sm md:text-base text-left transition-colors',
                             values[filter.id] === opt
                               ? 'text-brand bg-brand/10'
-                              : 'text-ink/70 hover:text-brand hover:bg-white/5'
+                              : 'text-ink/70 hover:text-brand hover:bg-ink/5'
                           )}
                         >
                           {opt}

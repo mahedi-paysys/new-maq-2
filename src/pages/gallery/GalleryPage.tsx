@@ -40,10 +40,10 @@ export function GalleryPage() {
               <Reveal key={item.href} delay={i * 0.1}>
                 <Link to={item.href} className="group block card-dark rounded-2xl p-8 hover:border-brand/30 transition-colors h-full">
                   <Icon size={24} className="text-brand mb-5" />
-                  <h2 className="text-lg font-semibold text-white mb-2 group-hover:text-brand transition-colors">
+                  <h2 className="text-lg font-semibold text-ink mb-2 group-hover:text-brand transition-colors">
                     {item.title}
                   </h2>
-                  <p className="text-sm text-white/55 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-ink-muted leading-relaxed">{item.description}</p>
                   <span className="inline-flex items-center gap-1 mt-5 text-sm text-brand">
                     View <ArrowUpRight size={14} />
                   </span>

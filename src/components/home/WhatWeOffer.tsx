@@ -13,7 +13,7 @@ const offerings = [
     description:
       'Strategically positioned just 15–20 minutes from Karachi Port, at M-10 Motorway leading towards Mochko Hub — the starting point of CPEC linking Gwadar, Quetta & Punjab. The most coveted industrial address in Pakistan.',
     icon: MapPin,
-    accent: '#f5b800',
+    accent: '#f0b400',
     tags: ['CPEC Starting Point', 'M-10 Motorway', 'Karachi Port Access'],
     image: '/assets/project-warehouse.jpeg',
   },
@@ -25,7 +25,7 @@ const offerings = [
     description:
       'Pakistan\'s first private gated warehouse community — surrounded by a full boundary wall, 24/7 CCTV surveillance, trained security guards, checkpoints, watch towers and a fire extinguishing system that ensures maximum protection.',
     icon: Shield,
-    accent: '#f5b800',
+    accent: '#f0b400',
     tags: ['24/7 CCTV', 'Security Guards', 'Fire Suppression', 'Checkpoints'],
     image: '/assets/gallery-1.jpeg',
   },
@@ -37,7 +37,7 @@ const offerings = [
     description:
       'A dedicated office tower featuring separate integrated office suites, a trading room, conference hall and prayer area — all designed to exceed client expectations and create a complete business environment within the complex.',
     icon: Building2,
-    accent: '#f5b800',
+    accent: '#f0b400',
     tags: ['Office Suites', 'Conference Hall', 'Trading Room', 'Prayer Area'],
     image: '/assets/gallery-5.jpeg',
   },
@@ -49,7 +49,7 @@ const offerings = [
     description:
       'Built on deep pile foundations with lightweight RCC & imported steel frames, UPVC roofing sheets (wind, sound & heat resistant) and earthquake-resistant design using rubber and steel absorbing pads. No major repairs for decades.',
     icon: Award,
-    accent: '#f5b800',
+    accent: '#f0b400',
     tags: ['Earthquake Resistant', 'Steel Framed', 'UPVC Roofing', 'Deep Pile'],
     image: '/assets/how-we-work.jpeg',
   },
@@ -61,7 +61,7 @@ const offerings = [
     description:
       'Every warehouse spans 850–1300 square yards with 27ft height and 17ft gate clearance. RCC & imported steel-framed structure on deep pile foundation, block masonry, plastered with cement mortar — built to last generations.',
     icon: Layers,
-    accent: '#f5b800',
+    accent: '#f0b400',
     tags: ['27ft Height', '17ft Gate', '850–1300 sq.yd', 'RCC Steel'],
     image: '/assets/gallery-6.jpeg',
   },
@@ -73,7 +73,7 @@ const offerings = [
     description:
       'A cutting-edge palm application providing one-touch solution for online payments processing, in-house camera tracking, caution alerts, unique warehouse IDs, virtual warehouse access and complete supply chain visibility.',
     icon: Smartphone,
-    accent: '#f5b800',
+    accent: '#f0b400',
     tags: ['Online Tracking', 'Camera Access', 'Virtual Tours', 'Smart Alerts'],
     image: '/assets/about-us-section.jpeg',
   },
@@ -114,9 +114,9 @@ export function WhatWeOffer() {
       {/* Sticky container */}
       <div className="sticky top-0 h-screen flex overflow-hidden">
         {/* Left panel — label */}
-        <div className="hidden xl:flex flex-col justify-center w-[72px] shrink-0 border-r border-white/[0.06]">
+        <div className="hidden xl:flex flex-col justify-center w-[72px] shrink-0 border-r border-ink/8">
           <div
-            className="whitespace-nowrap text-[11px] font-semibold tracking-[0.3em] uppercase text-white/20"
+            className="whitespace-nowrap text-[11px] font-semibold tracking-[0.3em] uppercase text-ink-faint"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', paddingBottom: '2rem' }}
           >
             What We Offer
@@ -134,7 +134,7 @@ export function WhatWeOffer() {
                   key={i}
                   className="relative w-1.5 h-1.5 rounded-full transition-all duration-500"
                   style={{
-                    background: i === active ? '#f5b800' : 'rgba(255,255,255,0.15)',
+                    background: i === active ? '#f0b400' : 'rgba(32,29,24,0.15)',
                     transform: i === active ? 'scale(1.6)' : 'scale(1)',
                   }}
                 />
@@ -163,12 +163,12 @@ export function WhatWeOffer() {
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 {/* Number */}
-                <div className="text-[80px] md:text-[100px] font-black leading-none text-white/[0.04] select-none mb-[-16px]">
+                <div className="text-[80px] md:text-[100px] font-black leading-none text-ink/[0.05] select-none mb-[-16px]">
                   {current.num}
                 </div>
 
                 {/* Title */}
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-tight mb-3">
                   {current.title}
                 </h2>
                 <p className="text-brand text-sm font-semibold tracking-wide mb-6">
@@ -176,7 +176,7 @@ export function WhatWeOffer() {
                 </p>
 
                 {/* Description */}
-                <p className="text-white/55 text-[15px] leading-relaxed mb-8 max-w-xl">
+                <p className="text-ink-muted text-[15px] leading-relaxed mb-8 max-w-xl">
                   {current.description}
                 </p>
 
@@ -195,7 +195,7 @@ export function WhatWeOffer() {
                 {/* CTA */}
                 <Link
                   to="/projects/elite-warehouse-systems"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-brand transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-brand transition-colors group"
                 >
                   Explore Elite Warehouse
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -216,7 +216,7 @@ export function WhatWeOffer() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.6 }}
                 style={{
-                  background: `radial-gradient(ellipse at 30% 50%, rgba(245,184,0,0.08) 0%, transparent 60%)`,
+                  background: `radial-gradient(ellipse at 30% 50%, rgba(240, 180, 0,0.08) 0%, transparent 60%)`,
                 }}
               />
             </AnimatePresence>
@@ -224,7 +224,7 @@ export function WhatWeOffer() {
             {/* Grid lines */}
             <div className="absolute inset-0 pointer-events-none"
               style={{
-                backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+                backgroundImage: 'linear-gradient(rgba(32,29,24,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(32,29,24,0.04) 1px, transparent 1px)',
                 backgroundSize: '60px 60px',
               }}
             />
@@ -261,17 +261,17 @@ export function WhatWeOffer() {
 
                   {/* Offering number label */}
                   <div className="text-center">
-                    <p className="text-[11px] tracking-[0.3em] uppercase text-white/25 mb-1">
+                    <p className="text-[11px] tracking-[0.3em] uppercase text-ink-faint mb-1">
                       Feature {current.num} of {offerings.length.toString().padStart(2, '0')}
                     </p>
-                    <p className="text-base font-medium text-white/70">{current.subtitle}</p>
+                    <p className="text-base font-medium text-ink-muted">{current.subtitle}</p>
                   </div>
                 </motion.div>
               </AnimatePresence>
             </div>
 
             {/* Step progress bar bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/05">
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-ink/8">
               <motion.div
                 className="h-full bg-brand"
                 animate={{ width: `${((active + 1) / offerings.length) * 100}%` }}

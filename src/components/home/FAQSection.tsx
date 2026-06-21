@@ -84,7 +84,7 @@ export function FAQSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,184,0,0.05) 0%, transparent 70%)',
+            'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240, 180, 0,0.05) 0%, transparent 70%)',
         }}
       />
 
@@ -102,7 +102,7 @@ export function FAQSection() {
           </motion.div>
 
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-[52px] font-bold text-white leading-tight mb-5"
+            className="text-3xl sm:text-4xl md:text-[52px] font-bold text-ink leading-tight mb-5"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -114,13 +114,13 @@ export function FAQSection() {
           </motion.h2>
 
           <motion.p
-            className="text-white/45 text-base max-w-lg mx-auto"
+            className="text-ink-muted text-base max-w-lg mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.7 }}
           >
             Can't find what you're looking for?{' '}
-            <Link to="/contact" className="text-brand hover:text-white transition-colors underline underline-offset-4">
+            <Link to="/contact" className="text-brand hover:text-brand-dark transition-colors underline underline-offset-4">
               Contact us directly
             </Link>
             {' '}and we'll get back to you promptly.
@@ -145,7 +145,7 @@ export function FAQSection() {
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 border ${
                 activeCategory === cat
                   ? 'bg-brand text-black border-brand'
-                  : 'border-white/10 text-white/45 hover:text-white hover:border-white/25'
+                  : 'border-ink/15 text-ink-muted hover:text-ink hover:border-ink/30'
               }`}
             >
               {cat}
@@ -157,9 +157,9 @@ export function FAQSection() {
         <div className="max-w-3xl mx-auto">
           {/* Glassmorphism card wrapper */}
           <motion.div
-            className="rounded-3xl overflow-hidden border border-white/[0.07]"
+            className="rounded-3xl overflow-hidden border border-border shadow-card"
             style={{
-              background: 'linear-gradient(135deg, rgba(17,17,17,0.9) 0%, rgba(10,10,10,0.95) 100%)',
+              background: 'linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(251,248,242,1) 100%)',
               backdropFilter: 'blur(20px)',
             }}
             initial={{ opacity: 0, y: 30 }}
@@ -182,8 +182,8 @@ export function FAQSection() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.06, duration: 0.4 }}
-                      className={`border-b border-white/[0.06] last:border-b-0 transition-colors duration-300 ${
-                        isOpen ? 'bg-white/[0.03]' : ''
+                      className={`border-b border-ink/8 last:border-b-0 transition-colors duration-300 ${
+                        isOpen ? 'bg-brand/[0.05]' : ''
                       }`}
                     >
                       <button
@@ -196,7 +196,7 @@ export function FAQSection() {
                           className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
                             isOpen
                               ? 'bg-brand text-black'
-                              : 'bg-white/[0.06] text-white/40 group-hover:bg-brand/15 group-hover:text-brand'
+                              : 'bg-ink/8 text-ink-faint group-hover:bg-brand/15 group-hover:text-brand'
                           }`}
                         >
                           ?
@@ -205,21 +205,21 @@ export function FAQSection() {
                         {/* Question */}
                         <span
                           className={`flex-1 text-sm font-semibold transition-colors duration-300 ${
-                            isOpen ? 'text-white' : 'text-white/70 group-hover:text-white'
+                            isOpen ? 'text-ink' : 'text-ink-muted group-hover:text-ink'
                           }`}
                         >
                           {faq.question}
                         </span>
 
                         {/* Category badge */}
-                        <span className="hidden sm:block text-[10px] font-medium text-white/25 mr-3">
+                        <span className="hidden sm:block text-[10px] font-medium text-ink-faint mr-3">
                           {faq.category}
                         </span>
 
                         {/* Toggle icon */}
                         <span
                           className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
-                            isOpen ? 'bg-brand text-black' : 'bg-white/[0.06] text-white/40'
+                            isOpen ? 'bg-brand text-black' : 'bg-ink/8 text-ink-faint'
                           }`}
                         >
                           {isOpen ? <Minus size={13} /> : <Plus size={13} />}
@@ -235,7 +235,7 @@ export function FAQSection() {
                             transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
                           >
                             <div className="px-7 pb-6 pl-[76px]">
-                              <p className="text-sm text-white/55 leading-relaxed">{faq.answer}</p>
+                              <p className="text-sm text-ink-muted leading-relaxed">{faq.answer}</p>
                             </div>
                           </motion.div>
                         )}
@@ -254,10 +254,10 @@ export function FAQSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
-            <p className="text-white/35 text-sm mb-4">Still have questions about our projects?</p>
+            <p className="text-ink-muted text-sm mb-4">Still have questions about our projects?</p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-brand text-black text-sm font-bold hover:bg-white transition-all duration-300 group"
+              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-brand text-black text-sm font-bold hover:bg-ink hover:text-surface transition-all duration-300 group"
             >
               Get In Touch
               <span className="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">

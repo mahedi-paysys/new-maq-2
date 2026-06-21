@@ -22,10 +22,10 @@ export function BlogsPage() {
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <span className="text-xs text-brand mb-2">{post.date}</span>
-                  <h2 className="text-lg font-semibold text-white mb-3 group-hover:text-brand transition-colors">
+                  <h2 className="text-lg font-semibold text-ink mb-3 group-hover:text-brand transition-colors">
                     {post.title}
                   </h2>
-                  <p className="text-sm text-white/55 leading-relaxed flex-1">{post.excerpt}</p>
+                  <p className="text-sm text-ink-muted leading-relaxed flex-1">{post.excerpt}</p>
                   <span className="inline-flex items-center gap-1 mt-4 text-sm text-brand">
                     Read More <ArrowUpRight size={14} />
                   </span>

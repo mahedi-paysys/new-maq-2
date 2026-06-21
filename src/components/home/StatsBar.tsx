@@ -11,7 +11,7 @@ export function StatsBar() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-3 glass-dark rounded-3xl shadow-elevated border border-white/10 overflow-hidden"
+          className="grid grid-cols-1 sm:grid-cols-3 glass-dark rounded-3xl shadow-elevated border border-ink/10 overflow-hidden"
         >
           {stats.map((stat, i) => (
             <motion.div

@@ -38,10 +38,10 @@ export function ServicesPage() {
                     <div className="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
                       <Icon size={20} className="text-brand" />
                     </div>
-                    <h2 className="text-xl font-semibold text-white mb-3 group-hover:text-brand transition-colors">
+                    <h2 className="text-xl font-semibold text-ink mb-3 group-hover:text-brand transition-colors">
                       {item.title}
                     </h2>
-                    <p className="text-sm text-white/60 leading-relaxed">{item.description}</p>
+                    <p className="text-sm text-ink-muted leading-relaxed">{item.description}</p>
                     <span className="inline-flex items-center gap-1 mt-5 text-sm text-brand">
                       View Details <ArrowUpRight size={14} />
                     </span>
@@ -51,13 +51,13 @@ export function ServicesPage() {
             })}
           </div>
 
-          <h2 className="text-2xl font-semibold text-white mb-8">What We Offer</h2>
+          <h2 className="text-2xl font-semibold text-ink mb-8">What We Offer</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {offerings.map((item, i) => (
               <Reveal key={item.id} delay={i * 0.06}>
                 <div className="card-dark rounded-2xl p-6">
-                  <h3 className="text-base font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-sm text-white/55 leading-relaxed">{item.description}</p>
+                  <h3 className="text-base font-semibold text-ink mb-2">{item.title}</h3>
+                  <p className="text-sm text-ink-muted leading-relaxed">{item.description}</p>
                 </div>
               </Reveal>
             ))}

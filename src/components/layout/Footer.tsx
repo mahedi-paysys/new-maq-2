@@ -69,7 +69,7 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden border-t border-white/[0.06]"
-      style={{ background: 'var(--color-canvas)' }}
+      style={{ background: 'var(--color-ink)' }}
     >
       {/* Top accent line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-brand/40 to-transparent" />

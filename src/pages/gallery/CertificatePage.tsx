@@ -15,8 +15,8 @@ export function CertificatePage() {
                 <div className="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center mx-auto mb-5">
                   <Award size={24} className="text-brand" />
                 </div>
-                <h2 className="text-lg font-semibold text-white mb-2">{cert.title}</h2>
-                <p className="text-sm text-white/55">{cert.issuer}</p>
+                <h2 className="text-lg font-semibold text-ink mb-2">{cert.title}</h2>
+                <p className="text-sm text-ink-muted">{cert.issuer}</p>
                 <span className="inline-block mt-4 text-xs text-brand uppercase tracking-wider">{cert.year}</span>
               </div>
             </Reveal>

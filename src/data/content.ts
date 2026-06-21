@@ -21,6 +21,7 @@ export const siteConfig = {
   },
   assets: {
     logo: '/assets/logo.png',
+    logoDark: '/assets/logo-dark.png',   // ← ye line add karo
     heroVideo: '/assets/hero_section_video.mp4',
   },
 }

@@ -63,7 +63,7 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
               Enter Your Keyword
             </p>
 
-            <div className="rounded-2xl glass-dark border border-white/10 shadow-elevated overflow-hidden">
+            <div className="rounded-2xl bg-[#161310]/95 backdrop-blur-xl border border-white/10 shadow-elevated overflow-hidden">
               <div className="flex items-center gap-3 px-5 py-4">
                 <Search
                   size={20}

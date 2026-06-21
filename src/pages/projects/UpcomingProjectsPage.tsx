@@ -20,9 +20,9 @@ export function UpcomingProjectsPage() {
                 </div>
                 <div className="md:col-span-3 p-8 flex flex-col justify-center">
                   <span className="text-xs text-brand uppercase tracking-wider mb-2">{project.status}</span>
-                  <h2 className="text-2xl font-semibold text-white mb-2">{project.title}</h2>
-                  <p className="text-sm text-white/50 mb-3">{project.location}</p>
-                  <p className="text-sm text-white/65 leading-relaxed">{project.description}</p>
+                  <h2 className="text-2xl font-semibold text-ink mb-2">{project.title}</h2>
+                  <p className="text-sm text-ink-muted mb-3">{project.location}</p>
+                  <p className="text-sm text-ink-muted leading-relaxed">{project.description}</p>
                 </div>
               </div>
             </Reveal>

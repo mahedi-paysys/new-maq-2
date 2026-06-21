@@ -59,7 +59,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-surface border-t border-white/5">
+      <section className="py-24 bg-surface border-t border-ink/8">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Reveal>
@@ -103,7 +103,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-surface border-t border-white/5">
+      {/* <section className="py-24 bg-surface border-t border-ink/8">
         <div className="container-main">
           <SectionHeading
             eyebrow="Best Features"
@@ -123,9 +123,9 @@ export function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="py-16 border-t border-border">
+      {/* <section className="py-16 border-t border-border">
         <div className="container-main flex flex-wrap gap-4">
           <Link
             to="/about/company-profile"
@@ -146,7 +146,7 @@ export function AboutPage() {
             Mission & Vision →
           </Link>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

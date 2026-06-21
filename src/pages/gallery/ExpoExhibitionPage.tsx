@@ -16,8 +16,8 @@ export function ExpoExhibitionPage() {
                 </div>
                 <div className="p-8 flex flex-col justify-center">
                   <span className="text-xs text-brand uppercase tracking-wider mb-2">{item.date}</span>
-                  <h2 className="text-xl font-semibold text-white mb-3">{item.title}</h2>
-                  <p className="text-sm text-white/60 leading-relaxed">{item.description}</p>
+                  <h2 className="text-xl font-semibold text-ink mb-3">{item.title}</h2>
+                  <p className="text-sm text-ink-muted leading-relaxed">{item.description}</p>
                 </div>
               </div>
             </Reveal>

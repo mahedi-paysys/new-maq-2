@@ -33,8 +33,8 @@ export function WhyChooseUs() {
                   />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-lg font-semibold text-white mb-3">{item.title}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed">
+                  <h3 className="text-lg font-semibold text-ink mb-3">{item.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">
                     {item.description}
                   </p>
                   <Link

@@ -78,7 +78,7 @@ export function ProjectsSection() {
               </span>
             </motion.div>
             <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -94,7 +94,7 @@ export function ProjectsSection() {
           >
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-white transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-ink-muted hover:text-ink transition-colors group"
             >
               View All
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -118,8 +118,8 @@ export function ProjectsSection() {
               whileTap={{ scale: 0.98 }}
               className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${
                 active === i
-                  ? 'bg-brand text-black border-brand shadow-[0_4px_20px_rgba(245,184,0,0.25)]'
-                  : 'border-white/10 text-white/50 hover:text-white hover:border-white/25 bg-white/[0.03]'
+                  ? 'bg-brand text-black border-brand shadow-[0_4px_20px_rgba(240,180,0,0.25)]'
+                  : 'border-ink/15 text-ink-muted hover:text-ink hover:border-ink/30 bg-surface'
               }`}
             >
               <span className="text-xs opacity-60 mr-1">{p.num}</span> {p.title}
@@ -194,7 +194,7 @@ export function ProjectsSection() {
                 <motion.p
                   key={project.num}
                   className="text-[120px] font-black leading-none select-none"
-                  style={{ color: 'rgba(245,184,0,0.05)' }}
+                  style={{ color: 'rgba(240, 180, 0,0.05)' }}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
@@ -202,8 +202,8 @@ export function ProjectsSection() {
                   {project.num}
                 </motion.p>
                 <div className="-mt-8">
-                  <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed mb-6">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-ink mb-4">{project.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed mb-6">{project.description}</p>
 
                   <div className="space-y-3 mb-8">
                     {[
@@ -219,7 +219,7 @@ export function ProjectsSection() {
                         transition={{ delay: 0.25 + i * 0.08, duration: 0.4 }}
                       >
                         <Icon size={15} className="text-brand shrink-0" />
-                        <span className="text-white/60">{text}</span>
+                        <span className="text-ink-muted">{text}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -228,10 +228,10 @@ export function ProjectsSection() {
                     to={`/projects/${project.slug}`}
                     className="inline-flex items-center gap-3 group"
                   >
-                    <span className="text-sm font-semibold text-white group-hover:text-brand transition-colors">
+                    <span className="text-sm font-semibold text-ink group-hover:text-brand transition-colors">
                       View Project Details
                     </span>
-                    <span className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand group-hover:border-brand transition-all">
+                    <span className="w-9 h-9 rounded-full border border-ink/20 flex items-center justify-center group-hover:bg-brand group-hover:border-brand transition-all">
                       <ArrowRight size={14} className="group-hover:text-black transition-colors" />
                     </span>
                   </Link>
@@ -240,7 +240,7 @@ export function ProjectsSection() {
 
               {/* Other project thumbnails */}
               <div className="space-y-3">
-                <p className="text-[11px] tracking-widest uppercase text-white/25 mb-3">Other Projects</p>
+                <p className="text-[11px] tracking-widest uppercase text-ink-faint mb-3">Other Projects</p>
                 {projects.filter((_, i) => i !== active).map((p, i) => (
                   <motion.button
                     key={p.id}
@@ -262,12 +262,12 @@ export function ProjectsSection() {
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
                     </div>
                     <div className="text-left">
-                      <p className="text-sm font-medium text-white/70 group-hover:text-white transition-colors">
+                      <p className="text-sm font-medium text-ink-muted group-hover:text-ink transition-colors">
                         {p.title}
                       </p>
-                      <p className="text-[11px] text-white/30">{p.type}</p>
+                      <p className="text-[11px] text-ink-faint">{p.type}</p>
                     </div>
-                    <ArrowRight size={14} className="ml-auto text-white/20 group-hover:text-brand group-hover:translate-x-1 transition-all" />
+                    <ArrowRight size={14} className="ml-auto text-ink-faint group-hover:text-brand group-hover:translate-x-1 transition-all" />
                   </motion.button>
                 ))}
               </div>

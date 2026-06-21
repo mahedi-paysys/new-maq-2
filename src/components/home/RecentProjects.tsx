@@ -35,7 +35,7 @@ export function RecentProjects() {
                 'px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300',
                 activeCategory === cat.value
                   ? 'bg-brand text-black'
-                  : 'bg-white/5 text-white/60 hover:text-white border border-white/10'
+                  : 'bg-ink/5 text-ink-muted hover:text-ink border border-ink/10'
               )}
             >
               {cat.label}

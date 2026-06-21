@@ -24,10 +24,10 @@ export function EliteWarehouseRentalPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-2xl font-semibold text-white mb-6">Rental Features</h2>
+            <h2 className="text-2xl font-semibold text-ink mb-6">Rental Features</h2>
             <ul className="space-y-4">
               {rentalFeatures.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-sm text-white/65">
+                <li key={feature} className="flex items-start gap-3 text-sm text-ink-muted">
                   <Check size={16} className="text-brand shrink-0 mt-0.5" />
                   {feature}
                 </li>

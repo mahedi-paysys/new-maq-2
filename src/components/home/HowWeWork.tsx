@@ -47,13 +47,13 @@ function StepContent({ step, isActive }: { step: typeof steps[0]; isActive: bool
         </div>
 
         <div className="flex-1">
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{step.title}</h3>
-          <p className="text-white/55 text-sm md:text-base leading-relaxed mb-4">{step.desc}</p>
+          <h3 className="text-xl md:text-2xl font-bold text-ink mb-3">{step.title}</h3>
+          <p className="text-ink-muted text-sm md:text-base leading-relaxed mb-4">{step.desc}</p>
           <div className="flex flex-wrap gap-2">
             {step.detail.split(' · ').map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] font-medium px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08] text-white/40"
+                className="text-[11px] font-medium px-3 py-1 rounded-full bg-ink/[0.04] border border-ink/10 text-ink-muted"
               >
                 {tag}
               </span>
@@ -112,7 +112,7 @@ export function HowWeWork() {
               </span>
             </motion.div>
             <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -134,7 +134,7 @@ export function HowWeWork() {
                     <motion.div
                       className="w-2 h-2 rounded-full transition-colors duration-500"
                       animate={{
-                        background: i <= activeStep ? '#f5b800' : 'rgba(255,255,255,0.15)',
+                        background: i <= activeStep ? '#f0b400' : 'rgba(32,29,24,0.15)',
                         scale: i === activeStep ? 1.4 : 1,
                       }}
                       transition={{ duration: 0.4 }}
@@ -145,8 +145,8 @@ export function HowWeWork() {
                         style={{
                           background:
                             i < activeStep
-                              ? 'rgba(245,184,0,0.4)'
-                              : 'rgba(255,255,255,0.08)',
+                              ? 'rgba(240,180,0,0.4)'
+                              : 'rgba(32,29,24,0.1)',
                         }}
                       />
                     )}
@@ -197,10 +197,10 @@ export function HowWeWork() {
 
           {/* Step counter */}
           <div className="mt-8 flex items-center gap-3">
-            <span className="text-[11px] tracking-[0.25em] uppercase text-white/25">
+            <span className="text-[11px] tracking-[0.25em] uppercase text-ink-faint">
               Step {steps[activeStep].num} of {steps.length.toString().padStart(2, '0')}
             </span>
-            <div className="flex-1 h-px bg-white/[0.06]">
+            <div className="flex-1 h-px bg-ink/8">
               <motion.div
                 className="h-full bg-brand/60"
                 animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}

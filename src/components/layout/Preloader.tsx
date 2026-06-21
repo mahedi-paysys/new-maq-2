@@ -56,7 +56,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(245,184,0,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(245,184,0,0.6) 1px, transparent 1px)',
+            'linear-gradient(rgba(240, 180, 0,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(240, 180, 0,0.6) 1px, transparent 1px)',
           backgroundSize: '48px 48px',
         }}
       />
@@ -66,7 +66,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 50% 40% at 50% 45%, rgba(245,184,0,0.06) 0%, transparent 70%)',
+            'radial-gradient(ellipse 50% 40% at 50% 45%, rgba(240, 180, 0,0.06) 0%, transparent 70%)',
         }}
       />
 
@@ -112,7 +112,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
               <motion.div
                 className="absolute left-0 right-0 h-px"
                 style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.7), transparent)',
+                  background: 'linear-gradient(90deg, transparent, rgba(240, 180, 0,0.7), transparent)',
                 }}
                 initial={{ top: '100%' }}
                 animate={{ top: '0%' }}

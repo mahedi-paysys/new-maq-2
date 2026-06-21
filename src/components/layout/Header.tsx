@@ -33,22 +33,22 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
-        <TopBar visible={showTopBar} overHero={overHero} />
+        <TopBar visible={isHome && showTopBar} overHero={overHero} />
 
         <div
           className={cn(
             'transition-all duration-500 border-b',
             overHero
               ? 'bg-transparent border-transparent'
-              : 'bg-[#111111]/95 backdrop-blur-xl border-white/8 shadow-nav'
+              : 'bg-white/95 backdrop-blur-xl border-ink/8 shadow-nav'
           )}
         >
           <div className="container-nav flex items-center justify-between gap-4 h-[68px] lg:h-[72px]">
             <Link to="/" className="shrink-0 group">
               <img
-                src={siteConfig.assets.logo}
+                src={overHero ? siteConfig.assets.logo : siteConfig.assets.logoDark}
                 alt={siteConfig.fullName}
-                className="h-[46px] w-[46px] sm:h-[48px] sm:w-[48px] lg:h-[52px] lg:w-[52px] object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-[72px] w-[72px] sm:h-[56px] sm:w-[56px] lg:h-[60px] lg:w-[60px] object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -70,7 +70,7 @@ export function Header() {
                           ? 'text-brand'
                           : overHero
                             ? 'text-white/90 hover:text-brand'
-                            : 'text-white/75 hover:text-brand'
+                            : 'text-ink/70 hover:text-brand'
                       )}
                     >
                       {item.label}
@@ -99,13 +99,13 @@ export function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                          className="absolute top-full left-0 mt-2 min-w-[280px] rounded-xl bg-[#161616] border border-white/10 shadow-elevated py-2 overflow-hidden"
+                          className="absolute top-full left-0 mt-2 min-w-[280px] rounded-xl bg-white border border-ink/10 shadow-elevated py-2 overflow-hidden"
                         >
                           {item.children.map((child) => (
                             <Link
                               key={child.href}
                               to={child.href}
-                              className="block px-5 py-3 text-[13px] font-medium text-white/70 hover:text-brand hover:bg-brand/5 transition-colors"
+                              className="block px-5 py-3 text-[13px] font-medium text-ink-muted hover:text-brand hover:bg-brand/5 transition-colors"
                             >
                               {child.label}
                             </Link>
@@ -127,7 +127,7 @@ export function Header() {
                   'p-2.5 rounded-full transition-colors',
                   overHero
                     ? 'text-white/90 hover:text-brand hover:bg-white/10'
-                    : 'text-white/80 hover:text-brand hover:bg-white/5'
+                    : 'text-ink/70 hover:text-brand hover:bg-ink/5'
                 )}
               >
                 <Search size={20} />
@@ -139,7 +139,7 @@ export function Header() {
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                 className={cn(
                   'xl:hidden p-2.5 rounded-full transition-colors',
-                  overHero ? 'text-white hover:bg-white/10' : 'text-white hover:bg-white/5'
+                  overHero ? 'text-white hover:bg-white/10' : 'text-ink hover:bg-ink/5'
                 )}
               >
                 {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -155,16 +155,16 @@ export function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="xl:hidden bg-[#111111] border-b border-white/8 overflow-hidden max-h-[80vh] overflow-y-auto"
+              className="xl:hidden bg-white border-b border-ink/8 overflow-hidden max-h-[80vh] overflow-y-auto"
             >
               <nav className="container-nav py-4">
                 {navigation.map((item) => (
-                  <div key={item.href} className="border-b border-white/5 last:border-0">
+                  <div key={item.href} className="border-b border-ink/8 last:border-0">
                     <Link
                       to={item.href}
                       className={cn(
                         'block py-3.5 text-sm font-semibold uppercase tracking-wide',
-                        isNavActive(location.pathname, item.href) ? 'text-brand' : 'text-white'
+                        isNavActive(location.pathname, item.href) ? 'text-brand' : 'text-ink'
                       )}
                     >
                       {item.label}
@@ -175,7 +175,7 @@ export function Header() {
                           <Link
                             key={child.href}
                             to={child.href}
-                            className="py-2 text-sm text-white/60 hover:text-brand"
+                            className="py-2 text-sm text-ink-muted hover:text-brand"
                           >
                             {child.label}
                           </Link>
@@ -184,7 +184,7 @@ export function Header() {
                     )}
                   </div>
                 ))}
-                <div className="pt-4 flex flex-col gap-2 text-sm text-white/60">
+                <div className="pt-4 flex flex-col gap-2 text-sm text-ink-muted">
                   <a href={`tel:${siteConfig.phoneAlt}`} className="flex items-center gap-2 py-1">
                     <Phone size={14} className="text-brand" /> {siteConfig.uan}
                   </a>
