@@ -161,7 +161,7 @@ export function HowWeWork() {
 
             {/* Sticky image */}
             <motion.div
-              className="relative w-full h-[320px] md:h-[360px] rounded-3xl overflow-hidden"
+              className="relative w-full h-[320px] md:h-[360px] rounded-3xl overflow-hidden -mt-12"
               style={{ y: imageY }}
               initial={{ opacity: 0, x: 40 }}
               animate={isHeaderInView ? { opacity: 1, x: 0 } : {}}
