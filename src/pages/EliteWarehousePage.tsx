@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Download, MapPin, ArrowRight } from 'lucide-react'
+import { Download, MapPin } from 'lucide-react'
 import { warehouseFeatures } from '@/data/content'
 import { Reveal } from '@/components/ui/AnimatedSection'
 import { Button } from '@/components/ui/Button'

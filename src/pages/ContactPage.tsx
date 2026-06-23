@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Send, ArrowRight } from 'lucide-react'
+import { MapPin, Phone, Mail, Send } from 'lucide-react'
 import { siteConfig } from '@/data/content'
 import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/AnimatedSection'
