@@ -44,7 +44,7 @@ export const expoItems = [
     title: 'Real Estate Summit 2024',
     date: 'November 2024',
     description: 'Featured presentation on CPEC corridor warehousing and industrial development.',
-    image: 'https://images.unsplash.com/photo-1505373877841-8d25f39c4752?w=800&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80&auto=format&fit=crop',
   },
 ]
 
