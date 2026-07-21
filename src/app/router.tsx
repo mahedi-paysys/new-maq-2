@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer'
 import { PageTransition } from '@/components/layout/PageTransition'
 import { HomePage } from '@/pages/HomePage'
 import { AboutPage } from '@/pages/AboutPage'
+import { CatalogPage } from '@/pages/CatalogPage'
 // import { CompanyProfilePage } from '@/pages/about/CompanyProfilePage'
 // import { LeadershipPage } from '@/pages/about/LeadershipPage'
 // import { MissionVisionPage } from '@/pages/about/MissionVisionPage'
@@ -21,6 +22,8 @@ import { ExpoExhibitionPage } from '@/pages/gallery/ExpoExhibitionPage'
 import { CertificatePage } from '@/pages/gallery/CertificatePage'
 import { UpcomingProjectsPage } from '@/pages/projects/UpcomingProjectsPage'
 import { BlogsPage } from '@/pages/BlogsPage'
+import { ThreeDmodels } from '@/pages/gallery/ThreeDmodels'
+// route:
 
 function withTransition(element: React.ReactNode) {
   return <PageTransition>{element}</PageTransition>
@@ -37,8 +40,8 @@ export function AppRouter() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={withTransition(<HomePage />)} />
             <Route path="/about" element={withTransition(<AboutPage />)} />
-            {/* {/* <Route path="/about/company-profile" element={withTransition(<CompanyProfilePage />)} /> */}
-            {/* <Route path="/about/leadership" element={withTransition(<LeadershipPage />)} />
+            <Route path="/catalog" element={withTransition(<CatalogPage />)} />
+            {/* <Route path="/about/company-profile" element={withTransition(<CompanyProfilePage />)} /> */}            {/* <Route path="/about/leadership" element={withTransition(<LeadershipPage />)} />
             <Route path="/about/mission-vision" element={withTransition(<MissionVisionPage />)} /> */}
 
             <Route path="/services" element={withTransition(<ServicesPage />)} />
@@ -49,7 +52,7 @@ export function AppRouter() {
             <Route path="/gallery/site-gallery" element={withTransition(<SiteGalleryPage />)} />
             <Route path="/gallery/expo-exhibition" element={withTransition(<ExpoExhibitionPage />)} />
             <Route path="/gallery/certificate" element={withTransition(<CertificatePage />)} />
-
+            <Route path="/gallery/3d-models" element={withTransition(<ThreeDmodels />)} />
             <Route path="/projects" element={withTransition(<ProjectsPage />)} />
             <Route path="/projects/elite-warehouse-systems" element={withTransition(<EliteWarehousePage />)} />
             <Route path="/projects/upcoming-projects" element={withTransition(<UpcomingProjectsPage />)} />

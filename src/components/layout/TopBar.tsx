@@ -34,19 +34,6 @@ function WhatsAppIcon() {
 //     </svg>
 //   )
 // }
-function ZameenIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
-      <rect width="24" height="24" rx="4" fill="#1b9e2f" />
-      <path
-        d="M12 3.5L4 8.5V11h2v9h12v-9h2V8.5L12 3.5zm0 2.3l6 3.6V10h-1.5v8h-9V10H6V9.4l6-3.6zM9.5 13h5v1.5h-5zm0 3h5v1.5h-5z"
-        fill="white"
-      />
-      <text x="8.5" y="15" fill="white" fontSize="8" fontWeight="bold" fontFamily="Arial">Z</text>
-    </svg>
-  )
-}
-
 function InstagramIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
@@ -133,7 +120,7 @@ export function TopBar({ visible, overHero }: TopBarProps) {
             href={siteConfig.social.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Zameen"
+            aria-label="Whatsapp"
             className={cn(
               'p-1.5 rounded transition-colors',
               overHero ? 'text-white/80 hover:text-brand' : 'text-white/70 hover:text-brand'
@@ -142,19 +129,6 @@ export function TopBar({ visible, overHero }: TopBarProps) {
             <WhatsAppIcon />
           </a>
 
-
-          <a
-            href={siteConfig.social.zameen}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Zameen"
-            className={cn(
-              'p-1.5 rounded transition-colors',
-              overHero ? 'text-white/80 hover:text-brand' : 'text-white/70 hover:text-brand'
-            )}
-          >
-            <ZameenIcon />
-          </a>
         </div>
       </div>
     </motion.div>

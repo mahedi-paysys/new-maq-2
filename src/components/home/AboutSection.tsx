@@ -12,24 +12,24 @@ const stats = [
 
 const faqs = [
   {
-    q: 'What makes MAQ Builders different?',
-    a: "MAQ GROUP OF COMPANIES combines precision engineering with visionary design — delivering Pakistan's first private gated warehouse community with SBCA & LDA approval, strategic CPEC-corridor location, and a One-Touch Smart App for digital warehouse management.",
+    q: 'Who is MAQ Builders?',
+    a: 'MAQ Builders is the construction division of MAQ Group of Companies. Since 2019, we have been committed to delivering high-quality developments with integrity, professional expertise, and customer-focused solutions.',
   },
   {
-    q: 'Why choose Elite Warehouse Systems?',
-    a: 'Strategically located at M-10 Motorway — just 15-20 minutes from Karachi Port and at the CPEC starting point. With 28 warehouses across 8 acres, 60ft roads, earthquake-resistant structure, and 24/7 security, it is Pakistan\'s most complete warehouse solution.',
+    q: 'What is Elite Warehouse Systems?',
+    a: 'Elite Warehouse Systems is our flagship warehouse development, designed for Pakistan’s growing industrial and logistics sector. It offers premium warehouse units, commercial spaces, executive offices, and modern infrastructure.',
   },
   {
-    q: 'What is your construction philosophy?',
-    a: 'We follow a systematic 4-step process: Sketching → Working → Utilization → Delivery. Every project is conceptualized with client aspirations, built with world-class materials, optimized for maximum functionality, and delivered with uncompromising quality assurance.',
+    q: 'Why choose MAQ Builders?',
+    a: 'We focus on quality construction, transparent processes, timely project delivery, and practical solutions tailored to our clients’ requirements.',
   },
   {
-    q: 'What upcoming projects are planned?',
-    a: 'MAQ Builders is developing Elite 4 Star Hotel — a landmark hospitality project, and Elite Vista 5 Towers — a residential community designed to break traditional isolating high-rise trends while preserving privacy and fostering social connection.',
+    q: 'What is your construction approach?',
+    a: 'Every project begins with understanding client requirements, careful planning, and professional execution to ensure durability, functionality, and long-term value.',
   },
   {
     q: 'How do you ensure quality & transparency?',
-    a: 'Every project is SBCA (Sindh Building Control Authority) and LDA (Liyari Development Authority) approved. We maintain clear payment plans, legal documentation, and our CEO Muhammad Asim Quraishi personally oversees quality with over two decades of industry experience.',
+    a: 'Every project is duly approved by the relevant government authorities, including SBCA, LDA, KBCA, and other applicable regulatory bodies. We ensure complete transparency through clear payment plans, verified legal documentation, and strict compliance with all regulatory requirements. With over two decades of industry experience, our CEO, Muhammad Asim Quraishi, personally oversees every project to maintain the highest standards of quality, integrity, and professional excellence.',
   },
 ]
 
@@ -149,11 +149,19 @@ export function AboutSection() {
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Intro text */}
-            <p className="text-ink-muted text-[15px] leading-relaxed mb-8">
+            {/* <p className="text-ink-muted text-[15px] leading-relaxed mb-8">
               The name <span className="text-ink font-medium">MAQ GROUP OF COMPANIES</span> is
               synonymous with excellence, quality, commitment and personalized service. Founded in
               2019, we have built a reputation as a developer of integrity — combining vision with
               precision to shape Pakistan's industrial landscape.
+            </p> */}
+
+
+            <p className="text-ink-muted text-[15px] leading-relaxed mb-8">
+              <span className="text-ink font-medium">MAQ Group of Companies</span> has been
+              delivering excellence in construction since <span className="text-ink font-medium">2019</span>.
+              Built on quality, integrity, and commitment, we focus on creating reliable
+              projects that combine modern design, professional expertise, and lasting value.
             </p>
 
             {/* Accordion */}

@@ -16,9 +16,8 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/EliteWarehouseSystems',
     instagram: 'https://www.instagram.com/maq_group_of_companies?igsh=MTE5cXhxd24xOHVjbQ%3D%3D&utm_source=qr',
-    whatsapp: 'https://wa.me/923001627627',
-    zameen: 'https://www.zameen.com/Property/kemari_town_elite_warehouse_systems_elite_warehouse_systems_ready_to_move_for_rent-54287370-17306-4.html',
-  },
+    whatsapp: 'https://wa.me/923001627627'
+    },
   assets: {
     logo: '/assets/logo.png',
     logoDark: '/assets/logo-dark.png',   // ← ye line add karo
@@ -29,6 +28,7 @@ export const siteConfig = {
 export const navigation: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
+  { label: 'Catalog', href: '/catalog' },
   {
     label: 'Services',
     href: '/services',
@@ -48,6 +48,7 @@ export const navigation: NavItem[] = [
     href: '/gallery',
     children: [
       { label: 'Site Gallery', href: '/gallery/site-gallery' },
+      { label: 'Warehouse 3D Models', href: '/gallery/3d-models' },
       { label: 'Expo Exhibition', href: '/gallery/expo-exhibition' },
       { label: 'Certificate', href: '/gallery/certificate' },
     ],
@@ -173,32 +174,28 @@ export const whyChooseUs = [
     title: 'Exclusive Portfolio Access',
     description:
       'SBCA & LDA approved projects with distinctive state-of-the-art industrial amenities — Pakistan\'s first and finest warehouse system.',
-    image:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop',
+    image: '/assets/Warehouse.jpeg',
   },
   {
     id: 'transparency',
     title: 'Certified Transparency & Assurance',
     description:
       'MAQ Builders is synonymous with excellence, quality, commitment and personalized service with a reputation of integrity.',
-    image:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+    image: '/assets/Warehouse.jpeg',
   },
   {
     id: 'negotiation',
     title: 'Strategic Price Negotiation',
     description:
       'Professional approach to constructing exceptional quality projects with innovative ideas in the construction industry.',
-    image:
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop',
+    image: '/assets/Warehouse.jpeg',
   },
   {
     id: 'acquisition',
     title: 'White-Glove Acquisition Service',
     description:
       '24/7 online support with dedicated teams ensuring seamless experience from inquiry to project delivery.',
-    image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop',
+    image: '/assets/Warehouse.jpeg',
   },
 ]
 

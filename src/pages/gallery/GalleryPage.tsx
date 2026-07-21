@@ -1,39 +1,278 @@
-import { motion } from 'framer-motion'
-import { Reveal } from '@/components/ui/AnimatedSection'
-import { Link } from 'react-router-dom'
-import { ArrowUpRight, Camera, Award, Presentation } from 'lucide-react'
+import { useState, useCallback } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
 
-const sections = [
+// const galleryItems = [
+//   { id: 1, 
+//     src: '/assets/elite-warehouse-systems/w1.jpeg', 
+//     title: 'Elite Warehouse – Aerial View', 
+//     category: 'Warehouse' },
+//   { id: 2, src: '/assets/elite-warehouse-systems/w2.jpeg', title: 'Site Overview', category: 'Warehouse' },
+//   { id: 3, src: '/assets/elite-warehouse-systems/w3.jpeg', title: 'Aerial Perspective', category: 'Warehouse' },
+//   { id: 4, src: '/assets/elite-warehouse-systems/w4.jpeg', title: 'Night View – Warehouse', category: 'Warehouse' },
+//   { id: 5, src: '/assets/elite-warehouse-systems/w5.jpeg', title: 'Office Tower – Night', category: 'Warehouse' },
+//   { id: 6, src: '/assets/elite-warehouse-systems/w6.jpeg', title: 'Warehouse Structure', category: 'Warehouse' },
+//   { id: 7, src: '/assets/elite-warehouse-systems/w7.jpeg', title: 'Elite Warehouse – Front', category: 'Warehouse' },
+//   { id: 8, src: '/assets/elite-warehouse-systems/w8.jpeg', title: 'Site Overview 2', category: 'Warehouse' },
+//   { id: 9, src: '/assets/elite-warehouse-systems/w9.jpeg', title: 'Aerial Perspective 2', category: 'Warehouse' },
+//   { id: 10, src: '/assets/elite-warehouse-systems/w10.jpeg', title: 'Night View 2', category: 'Warehouse' },
+//   { id: 11, src: '/assets/elite-warehouse-systems/w11.jpeg', title: 'Office Tower 2', category: 'Warehouse' },
+//   { id: 12, src: '/assets/elite-warehouse-systems/w12.jpeg', title: 'Warehouse – Wide View', category: 'Warehouse' },
+//   { id: 13, src: '/assets/elite-warehouse-systems/w13.jpeg', title: 'Site Overview 3', category: 'Warehouse' },
+//   { id: 14, src: '/assets/elite-warehouse-systems/w14.jpeg', title: 'Aerial Perspective 3', category: 'Warehouse' },
+//   { id: 15, src: '/assets/elite-warehouse-systems/w15.jpeg', title: 'Night View 3', category: 'Warehouse' },
+//   { id: 16, src: '/assets/nightshots/n1.jpeg', title: 'Office Tower 3', category: 'Night Shots' },
+//   { id: 17, src: '/assets/nightshots/n2.jpeg', title: 'Warehouse Structure 2', category: 'Night Shots' },
+//   { id: 18, src: '/assets/nightshots/n3.jpeg', title: 'Elite Warehouse – Aerial View 2', category: 'Night Shots' },
+//   { id: 19, src: '/assets/nightshots/n4.jpeg', title: 'Site Overview 4', category: 'Night Shots' },
+//   { id: 20, src: '/assets/nightshots/n5.jpeg', title: 'Aerial Perspective 4', category: 'Night Shots' },
+//   { id: 21, src: '/assets/nightshots/n6.jpeg', title: 'Night View 4', category: 'Night Shots' },
+//   { id: 22, src: '/assets/nightshots/n7.jpeg', title: 'Office Tower 4', category: 'Night Shots' },
+//   { id: 23, src: '/assets/nightshots/n8.jpeg', title: 'Warehouse Structure 3', category: 'Night Shots' },
+//   { id: 24, src: '/assets/nightshots/n9.jpeg', title: 'Elite Warehouse – Aerial View 3', category: 'Night Shots' },
+//   { id: 25, src: '/assets/nightshots/n10.jpeg', title: 'Site Overview 5', category: 'Night Shots' },
+//   { id: 26, src: '/assets/nightshots/n11.jpeg', title: 'Aerial Perspective 5', category: 'Night Shots' },
+//   { id: 27, src: '/assets/structure/s1.jpeg', title: 'Night View 5', category: 'Structure' },
+//   { id: 28, src: '/assets/structure/s2.jpeg', title: 'Office Tower 4', category: 'Structure' },
+//   { id: 29, src: '/assets/structure/s3.jpeg', title: 'Warehouse Structure 3', category: 'Structure' },
+//   { id: 30, src: '/assets/structure/s4.jpeg', title: 'Elite Warehouse – Aerial View 3', category: 'Structure' },
+//   { id: 31, src: '/assets/structure/s5.jpeg', title: 'Site Overview 5', category: 'Structure' },
+//   { id: 32, src: '/assets/structure/s6.jpeg', title: 'Aerial Perspective 5', category: 'Structure' },
+
+// ]
+
+
+const galleryItems = [
   {
-    title: 'Site Gallery',
-    href: '/gallery/site-gallery',
-    description: 'Construction progress, aerial views and on-site photography of our projects.',
-    icon: Camera,
-    image: '/assets/about-us-section.jpeg',
-    tag: 'Photography',
-    count: 'Project Photos',
+    id: 1,
+    src: '/assets/elite-warehouse-systems/w1.jpeg',
+    // title: 'Elite Warehouse – Aerial View',
+    category: 'Warehouse',
+    span: 'col-span-2 row-span-2',
   },
   {
-    title: 'Expo Exhibition',
-    href: '/gallery/expo-exhibition',
-    description: 'MAQ Builders at industry exhibitions and real estate summits across Pakistan.',
-    icon: Presentation,
-    image: '/assets/how-we-work.jpeg',
-    tag: 'Exhibitions',
-    count: 'Industry Events',
+    id: 2,
+    src: '/assets/elite-warehouse-systems/w2.jpeg',
+    // title: 'Site Overview',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
   },
   {
-    title: 'Certificates',
-    href: '/gallery/certificate',
-    description: 'SBCA, LDA approvals and quality certifications for all our projects.',
-    icon: Award,
-    image: '/assets/about-us-section.jpeg',
-    tag: 'Approvals',
-    count: 'Certifications',
+    id: 3,
+    src: '/assets/elite-warehouse-systems/w3.jpeg',
+    // title: 'Aerial Perspective',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
   },
+  {
+    id: 4,
+    src: '/assets/elite-warehouse-systems/w4.jpeg',
+    // title: 'Night View – Warehouse',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 5,
+    src: '/assets/elite-warehouse-systems/w5.jpeg',
+    // title: 'Office Tower – Night',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 6,
+    src: '/assets/elite-warehouse-systems/w6.jpeg',
+    // title: 'Warehouse Structure',
+    category: 'Warehouse',
+    span: 'col-span-2 row-span-1',
+  },
+  {
+    id: 7,
+    src: '/assets/elite-warehouse-systems/w7.jpeg',
+    // title: 'Elite Warehouse – Aerial View',
+    category: 'Warehouse',
+    span: 'col-span-2 row-span-2',
+  },
+  {
+    id: 8,
+    src: '/assets/elite-warehouse-systems/w8.jpeg',
+    // title: 'Site Overview',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 9,
+    src: '/assets/elite-warehouse-systems/w9.jpeg',
+    // title: 'Aerial Perspective',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 10,
+    src: '/assets/elite-warehouse-systems/w10.jpeg',
+    // title: 'Night View – Warehouse',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 11,
+    src: '/assets/elite-warehouse-systems/w11.jpeg',
+    // title: 'Office Tower – Night',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 12,
+    src: '/assets/elite-warehouse-systems/w12.jpeg',
+    // title: 'Elite Warehouse – Aerial View',
+    category: 'Warehouse',
+    span: 'col-span-2 row-span-2',
+  },
+  {
+    id: 13,
+    src: '/assets/elite-warehouse-systems/w13.jpeg',
+    // title: 'Site Overview',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 14,
+    src: '/assets/elite-warehouse-systems/w14.jpeg',
+    // title: 'Aerial Perspective',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 15,
+    src: '/assets/elite-warehouse-systems/w15.jpeg',
+    // title: 'Night View – Warehouse',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 16, src: '/assets/nightshots/n1.jpeg',
+    // title: 'Office Tower 3',
+    category: 'Night Shots',
+    span: 'col-span-1 row-span-1'
+  },
+  {
+    id: 17,
+    src: '/assets/nightshots/n2.jpeg',
+    // title: 'Warehouse Structure 2',
+    category: 'Night Shots',
+    span: 'col-span-1 row-span-1'
+  },
+  { id: 18, 
+    src: '/assets/nightshots/n3.jpeg', 
+    // title: 'Elite Warehouse – Aerial View 2', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 19, 
+    src: '/assets/nightshots/n4.jpeg', 
+    // title: 'Site Overview 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 20, 
+    src: '/assets/nightshots/n5.jpeg', 
+    // title: 'Aerial Perspective 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 21, 
+    src: '/assets/nightshots/n6.jpeg', 
+    // title: 'Night View 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 22, 
+    src: '/assets/nightshots/n7.jpeg', 
+    // title: 'Office Tower 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 23, 
+    src: '/assets/nightshots/n8.jpeg', 
+    // title: 'Warehouse Structure 3', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 24, 
+    src: '/assets/nightshots/n9.jpeg', 
+    // title: 'Elite Warehouse – Aerial View 3', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 25, 
+    src: '/assets/nightshots/n10.jpeg', 
+    // title: 'Site Overview 5', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 26, 
+    src: '/assets/nightshots/n11.jpeg', 
+    // title: 'Aerial Perspective 5', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 27, 
+    src: '/assets/nightshots/n12.jpeg', 
+    // title: 'Night View 5', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 28, 
+    src: '/assets/structure/s1.jpeg', 
+    // title: 'Site Overview 6', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 29, 
+    src: '/assets/structure/s2.jpeg', 
+    // title: 'Warehouse Structure 4', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 30, 
+    src: '/assets/structure/s3.jpeg', 
+    // title: 'Elite Warehouse – Aerial View 4', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 31, 
+    src: '/assets/structure/s4.jpeg', 
+    // title: 'Site Overview 7', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 32, 
+    src: '/assets/structure/s5.jpeg', 
+    // title: 'Aerial Perspective 6', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 33, 
+    src: '/assets/structure/s6.jpeg', 
+    // title: 'Night View 6', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+
 ]
 
+const categories = ['All', 'Warehouse', 'Night Shots', 'Structure']
+
 export function GalleryPage() {
+  const [active, setActive] = useState('All')
+  const [lightbox, setLightbox] = useState<number | null>(null)
+
+  const filtered = active === 'All' ? galleryItems : galleryItems.filter(g => g.category === active)
+
+  const open = useCallback((i: number) => setLightbox(i), [])
+  const close = useCallback(() => setLightbox(null), [])
+  const next = useCallback(() => setLightbox(i => i !== null ? (i + 1) % filtered.length : 0), [filtered.length])
+  const prev = useCallback(() => setLightbox(i => i !== null ? (i - 1 + filtered.length) % filtered.length : 0), [filtered.length])
+
   return (
     <>
       {/* Hero */}
@@ -43,11 +282,8 @@ export function GalleryPage() {
           alt="Gallery"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-ink/60" />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, rgba(21,20,15,0.3) 0%, rgba(21,20,15,0.75) 100%)' }}
-        />
+        <div className="absolute inset-0 bg-ink/65" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(21,20,15,0.2) 0%, rgba(21,20,15,0.8) 100%)' }} />
         <div className="relative z-10 container-main">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
@@ -56,91 +292,183 @@ export function GalleryPage() {
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-px bg-brand" />
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
-                Gallery
-              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">Gallery</span>
               <div className="w-8 h-px bg-brand" />
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight">
               Our <span className="text-brand">Gallery</span>
             </h1>
             <p className="mt-5 text-white/60 text-lg max-w-xl leading-relaxed">
-              Explore our latest projects, exhibitions and certifications.
+              Explore our projects, construction progress and site photography.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Cards */}
-      <section className="py-20 md:py-28">
+      {/* Gallery */}
+      <section className="py-20 md:py-28" style={{ background: 'var(--color-surface)' }}>
         <div className="container-main">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-            {sections.map((item, i) => {
-              const Icon = item.icon
-              return (
-                <Reveal key={item.href} delay={i * 0.12}>
-                  <Link to={item.href} className="group block relative rounded-3xl overflow-hidden">
-                    {/* Image */}
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
 
-                      {/* Tag */}
-                      <div className="absolute top-5 left-5">
-                        <span className="px-3 py-1.5 rounded-full bg-brand text-black text-[11px] font-bold uppercase tracking-[0.12em]">
-                          {item.tag}
-                        </span>
-                      </div>
+          {/* Filter tabs */}
+          <motion.div
+            className="flex flex-wrap gap-2 mb-12"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                className={`px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 border ${
+                  active === cat
+                    ? 'bg-brand text-black border-brand'
+                    : 'border-ink/15 text-ink-muted hover:text-ink hover:border-ink/30 bg-transparent'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+            <span className="ml-auto text-xs text-ink-faint self-center">
+              {filtered.length} photos
+            </span>
+          </motion.div>
 
-                      {/* Arrow */}
-                      <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-brand group-hover:border-brand transition-all duration-300">
-                        <ArrowUpRight size={15} className="text-white group-hover:text-black" />
-                      </div>
+          {/* Masonry grid */}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
+            <AnimatePresence>
+              {filtered.map((item, i) => (
+                <motion.div
+                  key={item.id}
+                  className="relative break-inside-avoid rounded-2xl overflow-hidden cursor-pointer group"
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.45, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => open(i)}
+                >
+                  <img
+                    src={item.src}
+                    // alt={item.title}
+                    className="w-full h-auto object-cover block transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
 
-                      {/* Icon bottom left */}
-                      <div className="absolute bottom-5 left-5">
-                        <div className="w-10 h-10 rounded-xl bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center">
-                          <Icon size={18} className="text-brand" />
-                        </div>
-                      </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/45 transition-all duration-400" />
+
+                  {/* Top accent */}
+                  <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-2/5 bg-brand transition-all duration-500 rounded-full" />
+
+                  {/* Zoom icon */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                    <div className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
+                      <ZoomIn size={16} />
                     </div>
+                  </div>
 
-                    {/* Content */}
-                    <div className="relative p-6 bg-white border border-border border-t-0 rounded-b-3xl group-hover:border-brand/20 transition-colors duration-300 overflow-hidden">
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-b-3xl"
-                        style={{ background: 'radial-gradient(ellipse at bottom left, rgba(245,184,0,0.06) 0%, transparent 65%)' }}
-                      />
-                      {/* Top accent line */}
-                      <motion.div
-                        className="absolute top-0 left-0 h-[2px] bg-brand rounded-full"
-                        initial={{ width: '0%' }}
-                        whileInView={{ width: '40%' }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: i * 0.12 + 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      />
-                      <div className="relative">
-                        <h2 className="text-lg font-bold text-ink mb-2 group-hover:text-brand transition-colors duration-300">
-                          {item.title}
-                        </h2>
-                        <p className="text-sm text-ink-muted leading-relaxed mb-4">{item.description}</p>
-                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
-                          Explore
-                          <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                        </span>
-                      </div>
+                  {/* Bottom info */}
+                  <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <div className="px-5 py-5 pt-10" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)' }}>
+                      <span className="inline-block text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full bg-brand/20 border border-brand/30 text-brand mb-2">
+                        {item.category}
+                      </span>
+                      {/* <p className="text-sm font-semibold text-white leading-snug">{item.title}</p> */}
                     </div>
-                  </Link>
-                </Reveal>
-              )
-            })}
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox !== null && (
+          <motion.div
+            className="fixed inset-0 z-[9000] flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={close}
+          >
+            <div className="absolute inset-0 bg-black/92 backdrop-blur-md" />
+
+            {/* Close */}
+            <button
+              onClick={close}
+              className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all"
+            >
+              <X size={16} />
+            </button>
+
+            {/* Prev */}
+            <button
+              onClick={e => { e.stopPropagation(); prev() }}
+              className="absolute left-4 z-10 w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white hover:bg-brand hover:border-brand hover:text-black transition-all"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            {/* Image */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={lightbox}
+                className="relative z-10 w-full max-w-5xl mx-16"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                onClick={e => e.stopPropagation()}
+              >
+                {/* Info bar */}
+                <div className="flex items-center justify-between mb-4 px-1">
+                  <div>
+                    <p className="text-xs tracking-widest uppercase text-brand">{filtered[lightbox].category}</p>
+                    {/* <h3 className="text-white font-semibold">{filtered[lightbox].title}</h3> */}
+                  </div>
+                  <span className="text-xs text-white/30 font-mono">
+                    {String(lightbox + 1).padStart(2, '0')} / {String(filtered.length).padStart(2, '0')}
+                  </span>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/08">
+                  <img
+                    src={filtered[lightbox].src}
+                    // alt={filtered[lightbox].title}
+                    className="w-full object-contain"
+                    style={{ maxHeight: '70vh' }}
+                  />
+                </div>
+
+                {/* Dots */}
+                <div className="flex items-center justify-center gap-1.5 mt-5">
+                  {filtered.map((_, i) => (
+                    <div
+                      key={i}
+                      onClick={e => { e.stopPropagation(); setLightbox(i) }}
+                      className="h-1 rounded-full cursor-pointer transition-all duration-300"
+                      style={{
+                        width: i === lightbox ? '24px' : '6px',
+                        background: i === lightbox ? '#f0b400' : 'rgba(255,255,255,0.2)',
+                      }}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Next */}
+            <button
+              onClick={e => { e.stopPropagation(); next() }}
+              className="absolute right-4 z-10 w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white hover:bg-brand hover:border-brand hover:text-black transition-all"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

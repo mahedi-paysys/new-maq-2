@@ -1,24 +1,37 @@
-import { motion } from 'framer-motion'
+import { useState, useMemo } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Reveal } from '@/components/ui/AnimatedSection'
 import { expoItems } from '@/data/pages'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Calendar } from 'lucide-react'
+import { ArrowLeft, X, ChevronLeft, ChevronRight, Expand } from 'lucide-react'
 
 export function ExpoExhibitionPage() {
+  const [selected, setSelected] = useState<number | null>(null)
+
+  // group items by location, preserving order
+  const groups = useMemo(() => {
+    const map = new Map<string, typeof expoItems>()
+    expoItems.forEach(item => {
+      const key = item.location ?? 'Expo'
+      if (!map.has(key)) map.set(key, [])
+      map.get(key)!.push(item)
+    })
+    return Array.from(map.entries())
+  }, [])
+
+  const prev = () => setSelected(i => i !== null ? (i - 1 + expoItems.length) % expoItems.length : null)
+  const next = () => setSelected(i => i !== null ? (i + 1) % expoItems.length : null)
+
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[360px] flex items-center overflow-hidden">
+      <section className="relative h-[45vh] min-h-[320px] flex items-center overflow-hidden">
         <img
           src="/assets/how-we-work.jpeg"
           alt="Expo Exhibition"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-ink/65" />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(21,20,15,0.85) 0%, rgba(21,20,15,0.3) 100%)' }}
-        />
         <div className="relative z-10 container-main">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
@@ -38,79 +51,134 @@ export function ExpoExhibitionPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight">
               Expo <span className="text-brand">Exhibition</span>
             </h1>
-            <p className="mt-4 text-white/60 text-lg max-w-lg leading-relaxed">
-              MAQ Builders at leading construction and real estate exhibitions.
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Items */}
+      {/* Gallery */}
       <section className="py-20 md:py-28">
         <div className="container-main">
           <Reveal>
             <Link
               to="/gallery"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-ink-muted hover:text-brand transition-colors mb-12 group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-ink-muted hover:text-brand transition-colors mb-16 group"
             >
               <ArrowLeft size={15} className="group-hover:-translate-x-1 transition-transform duration-200" />
               Back to Gallery
             </Link>
           </Reveal>
 
-          <div className="space-y-7">
-            {expoItems.map((item, i) => (
-              <Reveal key={item.id} delay={i * 0.1}>
-                <motion.div
-                  className="group grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden border border-border bg-white hover:border-brand/25 transition-colors duration-300"
-                  whileHover={{ boxShadow: '0 16px 48px -12px rgba(245,184,0,0.12)' }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  {/* Image */}
-                  <div className="relative aspect-video md:aspect-auto overflow-hidden min-h-[240px]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-1"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-ink/10" />
-                    {/* Top accent */}
-                    <motion.div
-                      className="absolute top-0 left-0 h-[3px] bg-brand"
-                      initial={{ width: '0%' }}
-                      whileInView={{ width: '50%' }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: i * 0.1 + 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    />
-                  </div>
+          {groups.map(([groupName, items], groupIndex) => {
+            // find the global index of each item (for lightbox nav across groups)
+            const startIndex = groups
+              .slice(0, groupIndex)
+              .reduce((sum, [, g]) => sum + g.length, 0)
 
-                  {/* Content */}
-                  <div className="relative p-8 md:p-10 flex flex-col justify-center overflow-hidden">
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{ background: 'radial-gradient(ellipse at top right, rgba(245,184,0,0.06) 0%, transparent 65%)' }}
-                    />
-                    <div className="relative">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-7 h-7 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center">
-                          <Calendar size={13} className="text-brand" />
-                        </div>
-                        <span className="text-xs font-bold text-brand uppercase tracking-[0.2em]">
-                          {item.date}
-                        </span>
-                      </div>
-                      <h2 className="text-xl md:text-2xl font-bold text-ink mb-3 group-hover:text-brand transition-colors duration-300">
-                        {item.title}
-                      </h2>
-                      <p className="text-sm text-ink-muted leading-relaxed">{item.description}</p>
-                    </div>
+            return (
+              <div key={groupName} className={groupIndex > 0 ? 'mt-20' : ''}>
+                <Reveal>
+                  <div className="flex items-center gap-4 mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold text-ink tracking-tight">
+                      {groupName}
+                    </h2>
+                    <div className="flex-1 h-px bg-ink/10" />
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+                      {items.length} Photos
+                    </span>
                   </div>
-                </motion.div>
-              </Reveal>
-            ))}
-          </div>
+                </Reveal>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {items.map((item, i) => {
+                    const globalIndex = startIndex + i
+                    return (
+                      <Reveal key={item.id} delay={i * 0.08}>
+                        <motion.div
+                          className="relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-shadow duration-500"
+                          whileHover={{ y: -4 }}
+                          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                          onClick={() => setSelected(globalIndex)}
+                        >
+                          <img
+                            src={item.image}
+                            alt={`${groupName} ${i + 1}`}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          {/* gradient + overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="w-12 h-12 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center scale-90 group-hover:scale-100 transition-transform duration-300">
+                              <Expand size={18} className="text-white" />
+                            </div>
+                          </div>
+                          {/* corner accent */}
+                          <div className="absolute top-0 left-0 w-0 h-[3px] bg-brand group-hover:w-full transition-all duration-500" />
+                        </motion.div>
+                      </Reveal>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected !== null && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelected(null)}
+          >
+            <div className="absolute inset-0 bg-ink/90 backdrop-blur-md" />
+
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <X size={18} />
+            </button>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); prev() }}
+              className="absolute left-4 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-brand hover:text-black border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={selected}
+                src={expoItems[selected].image}
+                alt={`Expo ${selected + 1}`}
+                className="relative z-10 max-w-[90vw] max-h-[85vh] object-contain rounded-2xl"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </AnimatePresence>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); next() }}
+              className="absolute right-4 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-brand hover:text-black border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+              <span className="text-xs text-white font-semibold tracking-widest">
+                {expoItems[selected].location} · {selected + 1} / {expoItems.length}
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

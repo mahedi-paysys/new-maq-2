@@ -14,38 +14,38 @@ const projects = [
     location: 'M-10 Motorway, Karachi',
     area: '8 Acres · 28 Units',
     description:
-      "Pakistan's first private gated warehouse community — strategically positioned at the CPEC starting point. Each warehouse spans 850–1300 sq.yd with 27ft height, earthquake-resistant structure, and integrated smart technology.",
+      "Pakistan's first private gated warehouse community — strategically positioned at the CPEC starting point. Each warehouse spans 850–1300 sq.yd with 30ft height, earthquake-resistant structure, and integrated smart technology.",
     image: '/assets/project-warehouse.jpeg',
     category: 'warehousing',
   },
-  {
-    id: 2,
-    num: '02',
-    slug: 'elite-4-star-hotel',
-    title: 'Elite 4 Star Hotel',
-    type: 'Hospitality · Construction',
-    year: '2024',
-    location: 'Karachi, Pakistan',
-    area: 'Landmark Development',
-    description:
-      'A landmark hospitality project where location, design and facilities are crafted with the same precision as service and guest experience. Premium 4-star accommodation redefining hospitality standards in Karachi.',
-    image: '/assets/project-elite-4star.jpeg',
-    category: 'construction',
-  },
-  {
-    id: 3,
-    num: '03',
-    slug: 'elite-5-towers',
-    title: 'Elite Vista 5 Towers',
-    type: 'Residential · Commercial',
-    year: '2024',
-    location: 'Karachi, Pakistan',
-    area: 'Multi-Tower Complex',
-    description:
-      'A visionary residential tower complex designed to break traditional isolating high-rise trends. Elite Vista 5 Towers fosters community and social connection while preserving personal privacy — reimagining vertical living.',
-    image: '/assets/project-towers.png',
-    category: 'commercial',
-  },
+  // {
+  //   id: 2,
+  //   num: '02',
+  //   slug: 'elite-4-star-hotel',
+  //   title: 'Elite 4 Star Hotel',
+  //   type: 'Hospitality · Construction',
+  //   year: '2024',
+  //   location: 'Karachi, Pakistan',
+  //   area: 'Landmark Development',
+  //   description:
+  //     'A landmark hospitality project where location, design and facilities are crafted with the same precision as service and guest experience. Premium 4-star accommodation redefining hospitality standards in Karachi.',
+  //   image: '/assets/project-elite-4star.jpeg',
+  //   category: 'construction',
+  // },
+  // {
+  //   id: 3,
+  //   num: '03',
+  //   slug: 'elite-5-towers',
+  //   title: 'Elite Vista 5 Towers',
+  //   type: 'Residential · Commercial',
+  //   year: '2024',
+  //   location: 'Karachi, Pakistan',
+  //   area: 'Multi-Tower Complex',
+  //   description:
+  //     'A visionary residential tower complex designed to break traditional isolating high-rise trends. Elite Vista 5 Towers fosters community and social connection while preserving personal privacy — reimagining vertical living.',
+  //   image: '/assets/project-towers.png',
+  //   category: 'commercial',
+  // },
 ]
 
 export function ProjectsSection() {
@@ -103,7 +103,7 @@ export function ProjectsSection() {
         </div>
 
         {/* Project tabs selector */}
-        <motion.div
+        {/* <motion.div
           className="flex gap-2 mb-10 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -125,7 +125,7 @@ export function ProjectsSection() {
               <span className="text-xs opacity-60 mr-1">{p.num}</span> {p.title}
             </motion.button>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Main featured project */}
         <AnimatePresence mode="wait">
@@ -240,7 +240,7 @@ export function ProjectsSection() {
 
               {/* Other project thumbnails */}
               <div className="space-y-3">
-                <p className="text-[11px] tracking-widest uppercase text-ink-faint mb-3">Other Projects</p>
+                {/* <p className="text-[11px] tracking-widest uppercase text-ink-faint mb-3">Other Projects</p> */}
                 {projects.filter((_, i) => i !== active).map((p, i) => (
                   <motion.button
                     key={p.id}

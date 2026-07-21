@@ -8,14 +8,14 @@ const offerings = [
   {
     id: 'landmark',
     num: '01',
-    title: 'Ideal Landmark',
+    title: 'Ideal Location',
     subtitle: 'Prime CPEC Corridor Location',
     description:
       'Strategically positioned just 15–20 minutes from Karachi Port, at M-10 Motorway leading towards Mochko Hub — the starting point of CPEC linking Gwadar, Quetta & Punjab. The most coveted industrial address in Pakistan.',
     icon: MapPin,
     accent: '#f0b400',
     tags: ['CPEC Starting Point', 'M-10 Motorway', 'Karachi Port Access'],
-    image: '/assets/project-warehouse.jpeg',
+    image: '/assets/home/howwework1.jpeg',
   },
   {
     id: 'gated',
@@ -63,7 +63,7 @@ const offerings = [
     icon: Layers,
     accent: '#f0b400',
     tags: ['27ft Height', '17ft Gate', '850–1300 sq.yd', 'RCC Steel'],
-    image: '/assets/gallery-6.jpeg',
+    image: '/assets/home/howwework5.jpeg',
   },
   {
     id: 'app',
@@ -224,7 +224,7 @@ export function WhatWeOffer() {
             {/* Grid lines */}
             <div className="absolute inset-0 pointer-events-none"
               style={{
-                backgroundImage: 'linear-gradient(rgba(32,29,24,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(32,29,24,0.04) 1px, transparent 1px)',
+                // backgroundImage: 'linear-gradient(rgba(240,180,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(240,180,0,0.04) 1px, transparent 1px)',
                 backgroundSize: '60px 60px',
               }}
             />

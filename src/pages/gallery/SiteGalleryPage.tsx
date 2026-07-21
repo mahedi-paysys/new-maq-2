@@ -1,10 +1,16 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Reveal } from '@/components/ui/AnimatedSection'
-import { galleryImages } from '@/data/pages'
+import { siteGallery } from '@/data/pages'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, ZoomIn } from 'lucide-react'
+import { ArrowLeft, ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 export function SiteGalleryPage() {
+  const [selected, setSelected] = useState<number | null>(null)
+
+  const prev = () => setSelected(i => i !== null ? (i - 1 + siteGallery.length) % siteGallery.length : null)
+  const next = () => setSelected(i => i !== null ? (i + 1) % siteGallery.length : null)
+
   return (
     <>
       {/* Hero */}
@@ -59,17 +65,18 @@ export function SiteGalleryPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {galleryImages.map((item, i) => (
+            {siteGallery.map((item, i) => (
               <Reveal key={item.id} delay={i * 0.06}>
                 <motion.div
                   className="group relative rounded-2xl overflow-hidden bg-white border border-border cursor-pointer"
                   whileHover={{ y: -4, boxShadow: '0 16px 40px -12px rgba(21,20,15,0.15)' }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => setSelected(i)}
                 >
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={item.image}
-                      alt={item.title}
+                      // alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-1"
                       loading="lazy"
                     />
@@ -89,7 +96,7 @@ export function SiteGalleryPage() {
                     transition={{ duration: 0.7, delay: i * 0.06 + 0.2, ease: [0.16, 1, 0.3, 1] }}
                   />
                   <p className="p-4 text-sm font-semibold text-ink group-hover:text-brand transition-colors duration-300">
-                    {item.title}
+                    {/* {item.title} */}
                   </p>
                 </motion.div>
               </Reveal>
@@ -97,6 +104,62 @@ export function SiteGalleryPage() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected !== null && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelected(null)}
+          >
+            <div className="absolute inset-0 bg-ink/90 backdrop-blur-md" />
+
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <X size={18} />
+            </button>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); prev() }}
+              className="absolute left-4 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-brand hover:text-black border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={selected}
+                src={siteGallery[selected].image}
+                // alt={siteGallery[selected].title}
+                className="relative z-10 max-w-[90vw] max-h-[85vh] object-contain rounded-2xl"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </AnimatePresence>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); next() }}
+              className="absolute right-4 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-brand hover:text-black border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+              <span className="text-xs text-white font-semibold tracking-widest">
+                {/* {siteGallery[selected].title} · {selected + 1} / {siteGallery.length} */}
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

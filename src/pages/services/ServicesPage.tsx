@@ -10,7 +10,7 @@ const services = [
     href: '/services/elite-warehouse-rental',
     description: 'Flexible warehousing solutions with dedicated office space, 24/7 security and smart app integration.',
     icon: Layers,
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80&auto=format&fit=crop',
+    image: '/assets/office tower night - Copy.JPG.jpeg',
     tag: 'Rental',
   },
   {
@@ -18,7 +18,7 @@ const services = [
     href: '/services/elite-warehouse-sale',
     description: 'Own premium industrial units at CPEC corridor with SBCA & LDA approved freehold ownership.',
     icon: Building2,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop',
+    image: '/assets/project-towers.png',
     tag: 'For Sale',
   },
 ]

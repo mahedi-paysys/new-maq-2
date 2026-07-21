@@ -11,7 +11,7 @@ export function EliteWarehouseRentalPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=80&auto=format&fit=crop"
+          src="/assets/elite-warehouse-systems/eliteforrental.jpeg"
           alt="Elite Warehouse Rental"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -55,7 +55,7 @@ export function EliteWarehouseRentalPage() {
               <div className="relative rounded-3xl overflow-hidden group">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80&auto=format&fit=crop"
+                    src="/assets/elite-warehouse-systems/eliteforrental.jpeg"
                     alt="Elite Warehouse Rental"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:-translate-y-2"
                   />

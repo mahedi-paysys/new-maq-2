@@ -44,7 +44,7 @@ export function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
               <motion.img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop"
+                src="/assets/ceo.jpeg"
                 alt="MAQ Builders construction site"
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.05 }}
@@ -87,135 +87,136 @@ export function AboutPage() {
             </span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-  {/* Mission */}
-  <Reveal>
-    <motion.div
-      className="group relative p-8 rounded-3xl border border-border bg-white h-full cursor-default overflow-hidden"
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {/* Animated bg glow on hover */}
-      <motion.div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at top left, rgba(245,184,0,0.08) 0%, transparent 65%)',
-        }}
-      />
-      {/* Top accent line */}
-      <motion.div
-        className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-brand to-brand/30 rounded-full"
-        initial={{ width: '0%' }}
-        whileInView={{ width: '40%' }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      />
-      <div className="relative">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/15 flex items-center justify-center group-hover:bg-brand/20 group-hover:border-brand/30 transition-all duration-300">
-            <span className="text-brand font-bold text-base font-mono">01</span>
-          </div>
-          <div className="h-px flex-1 bg-border group-hover:bg-brand/20 transition-colors duration-300" />
-        </div>
-        <h3 className="text-2xl font-bold text-ink mb-4 group-hover:text-brand transition-colors duration-300">
-          Mission
-        </h3>
-        <p className="text-ink-muted text-sm leading-relaxed">{mission}</p>
-      </div>
-      {/* Bottom shadow on hover */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.3), transparent)' }}
-      />
-    </motion.div>
-  </Reveal>
 
-  {/* Vision */}
-  <Reveal delay={0.12}>
-    <motion.div
-      className="group relative p-8 rounded-3xl border border-border bg-white h-full cursor-default overflow-hidden"
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <motion.div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at top left, rgba(245,184,0,0.08) 0%, transparent 65%)',
-        }}
-      />
-      <motion.div
-        className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-brand to-brand/30 rounded-full"
-        initial={{ width: '0%' }}
-        whileInView={{ width: '40%' }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      />
-      <div className="relative">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/15 flex items-center justify-center group-hover:bg-brand/20 group-hover:border-brand/30 transition-all duration-300">
-            <span className="text-brand font-bold text-base font-mono">02</span>
-          </div>
-          <div className="h-px flex-1 bg-border group-hover:bg-brand/20 transition-colors duration-300" />
-        </div>
-        <h3 className="text-2xl font-bold text-ink mb-4 group-hover:text-brand transition-colors duration-300">
-          Vision
-        </h3>
-        <p className="text-ink-muted text-sm leading-relaxed">{vision}</p>
-      </div>
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.3), transparent)' }}
-      />
-    </motion.div>
-  </Reveal>
+            {/* Mission */}
+            <Reveal>
+              <motion.div
+                className="group relative p-8 rounded-3xl border border-border bg-white h-full cursor-default overflow-hidden"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {/* Dark overlay on hover */}
+                <div className="absolute inset-0 bg-ink opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
+                {/* Corner glow */}
+                <div
+                  className="absolute -top-12 -right-12 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-150 transition-all duration-700 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(245,184,0,0.18) 0%, transparent 65%)' }}
+                />
+                {/* Grid pattern */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px)',
+                  }}
+                />
+                <motion.div
+                  className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-brand to-brand/30 rounded-full"
+                  initial={{ width: '0%' }}
+                  whileInView={{ width: '40%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/15 flex items-center justify-center group-hover:bg-brand group-hover:border-brand transition-all duration-300">
+                      <span className="text-brand group-hover:text-black font-bold text-base transition-colors duration-300">01</span>
+                    </div>
+                    <div className="h-px flex-1 bg-border group-hover:bg-brand/30 transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-ink mb-4 group-hover:text-white transition-colors duration-300">Mission</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed group-hover:text-white/55 transition-colors duration-300">{mission}</p>
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.5), transparent)' }}
+                />
+              </motion.div>
+            </Reveal>
 
-  {/* Principles — dark card */}
-  <Reveal delay={0.24}>
-    <motion.div
-      className="group relative p-8 rounded-3xl bg-ink h-full cursor-default overflow-hidden"
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {/* Animated corner glow */}
-      <div
-        className="absolute -top-12 -right-12 w-40 h-40 rounded-full transition-all duration-700 group-hover:scale-150"
-        style={{ background: 'radial-gradient(circle, rgba(245,184,0,0.18) 0%, transparent 65%)' }}
-      />
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px)',
-        }}
-      />
-      <motion.div
-        className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-brand to-brand/20 rounded-full"
-        initial={{ width: '0%' }}
-        whileInView={{ width: '50%' }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      />
-      <div className="relative">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-brand flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <span className="text-black font-bold text-base font-mono">03</span>
+            {/* Vision */}
+            <Reveal delay={0.12}>
+              <motion.div
+                className="group relative p-8 rounded-3xl border border-border bg-white h-full cursor-default overflow-hidden"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="absolute inset-0 bg-ink opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
+                <div
+                  className="absolute -top-12 -right-12 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-150 transition-all duration-700 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(245,184,0,0.18) 0%, transparent 65%)' }}
+                />
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px)',
+                  }}
+                />
+                <motion.div
+                  className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-brand to-brand/30 rounded-full"
+                  initial={{ width: '0%' }}
+                  whileInView={{ width: '40%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/15 flex items-center justify-center group-hover:bg-brand group-hover:border-brand transition-all duration-300">
+                      <span className="text-brand group-hover:text-black font-bold text-base transition-colors duration-300">02</span>
+                    </div>
+                    <div className="h-px flex-1 bg-border group-hover:bg-brand/30 transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-ink mb-4 group-hover:text-white transition-colors duration-300">Vision</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed group-hover:text-white/55 transition-colors duration-300">{vision}</p>
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.5), transparent)' }}
+                />
+              </motion.div>
+            </Reveal>
+
+            {/* Principles */}
+            <Reveal delay={0.24}>
+              <motion.div
+                className="group relative p-8 rounded-3xl border border-border bg-white h-full cursor-default overflow-hidden"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="absolute inset-0 bg-ink opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
+                <div
+                  className="absolute -top-12 -right-12 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-150 transition-all duration-700 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(245,184,0,0.18) 0%, transparent 65%)' }}
+                />
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 32px)',
+                  }}
+                />
+                <motion.div
+                  className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-brand to-brand/30 rounded-full"
+                  initial={{ width: '0%' }}
+                  whileInView={{ width: '50%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/15 flex items-center justify-center group-hover:bg-brand group-hover:border-brand transition-all duration-300">
+                      <span className="text-brand group-hover:text-black font-bold text-base transition-colors duration-300">03</span>
+                    </div>
+                    <div className="h-px flex-1 bg-border group-hover:bg-brand/30 transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-ink mb-4 group-hover:text-white transition-colors duration-300">Principles</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed group-hover:text-white/55 transition-colors duration-300">{principles}</p>
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.5), transparent)' }}
+                />
+              </motion.div>
+            </Reveal>
           </div>
-          <div className="h-px flex-1 bg-white/10 group-hover:bg-brand/30 transition-colors duration-300" />
-        </div>
-        <h3 className="text-2xl font-bold text-white mb-4">
-          Principles
-        </h3>
-        <p className="text-white/55 text-sm leading-relaxed group-hover:text-white/70 transition-colors duration-300">
-          {principles}
-        </p>
-      </div>
-      {/* Bottom glow */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.5), transparent)' }}
-      />
-    </motion.div>
-  </Reveal>
-</div>
         </div>
       </section>
 
@@ -285,3 +286,4 @@ export function AboutPage() {
     </div>
   )
 }
+

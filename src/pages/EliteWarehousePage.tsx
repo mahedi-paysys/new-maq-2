@@ -10,7 +10,7 @@ export function EliteWarehousePage() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80&auto=format&fit=crop"
+          src="/assets/Warehouse.jpeg"
           alt="Elite Warehouse Systems"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -31,7 +31,7 @@ export function EliteWarehousePage() {
               Elite Warehouse Systems
             </h1>
             <p className="mt-6 text-white/65 text-lg max-w-2xl leading-relaxed">
-              Pakistan's first and finest warehouse system — SBCA & LDA approved, setting a spectacular industrial solution.
+              Pakistan's first and finest private warehouse system — SBCA & LDA approved, setting a spectacular industrial solution.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button variant="brand" icon={<Download size={16} />} iconPosition="left">
@@ -130,7 +130,7 @@ export function EliteWarehousePage() {
               <div className="relative rounded-3xl overflow-hidden group">
                 <div className="aspect-video overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&q=80&auto=format&fit=crop"
+                    src="/assets/elite-warehouse-systems/elite-warehouse-main.jpeg"
                     alt="Location map"
                     className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-1"
                   />

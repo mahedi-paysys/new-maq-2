@@ -37,7 +37,7 @@
 //           <Reveal delay={0.15}>
 //             <div className="aspect-video rounded-3xl overflow-hidden">
 //               <img
-//                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80&auto=format&fit=crop"
+//                 src="/assets/Warehouse.jpeg"
 //                 alt="MAQ Builders projects"
 //                 className="w-full h-full object-cover"
 //               />

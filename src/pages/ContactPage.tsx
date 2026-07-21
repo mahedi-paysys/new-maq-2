@@ -28,7 +28,7 @@ const contactCards = [
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
-
+  
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setSubmitted(true)
@@ -39,7 +39,7 @@ export function ContactPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1400&q=80&auto=format&fit=crop"
+          src="/assets/Warehouse.jpeg"
           alt="Contact"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -253,6 +253,48 @@ export function ContactPage() {
               </motion.div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+
+
+      {/* Map Section */}
+      <section className="py-20 md:py-28 border-t border-border">
+        <div className="container-main">
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-px bg-brand" />
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+                Our Location
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink leading-tight">
+              Visit Our Office
+            </h2>
+            <p className="mt-2 text-ink-muted text-sm max-w-md">
+              Located at the heart of Karachi — come meet us in person.
+            </p>
+          </div>
+
+          <motion.div
+            className="relative w-full rounded-3xl overflow-hidden border border-border"
+            style={{ height: '480px', boxShadow: '0 24px 80px -16px rgba(0,0,0,0.12)' }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <iframe
+              title="MAQ Builders Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.6046263165063!2d66.90437687483048!3d24.979563040482418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb36b87d5efd8d9%3A0x9bcf9c44048987f2!2sElite%20Warehouse%20Systems!5e0!3m2!1sen!2s!4v1784379429537!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </motion.div>
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, Search, Phone, Mail } from 'lucide-react'
+import { Menu, X, ChevronDown, Search, Phone, Mail} from 'lucide-react'
 import { navigation, siteConfig } from '@/data/content'
 import { TopBar } from '@/components/layout/TopBar'
 import { SearchOverlay } from '@/components/layout/SearchOverlay'

@@ -26,15 +26,6 @@ function WhatsAppIcon() {
   )
 }
 
-function ZameenIcon() {
-  return (
-    <svg viewBox="0 0 32 32" fill="none" width="16" height="16" aria-hidden="true">
-      <rect width="32" height="32" rx="6" fill="#1b9e2f" />
-      <path d="M16 5L6 11v4h3v11h14V15h3v-4L16 5zm0 3.2L22 12v1h-1.5v10h-9V13H10v-1l6-3.8z" fill="white" />
-      <text x="11" y="21" fill="white" fontSize="10" fontWeight="bold" fontFamily="Arial, sans-serif">Z</text>
-    </svg>
-  )
-}
 
 const socialLinks = [
   {
@@ -54,13 +45,7 @@ const socialLinks = [
     label: 'WhatsApp',
     icon: WhatsAppIcon,
     hoverColor: '#25d366',
-  },
-  {
-    href: siteConfig.social.zameen,
-    label: 'Zameen.com',
-    icon: ZameenIcon,
-    hoverColor: '#1b9e2f',
-  },
+  }
 ]
 
 export function Footer() {
@@ -159,7 +144,7 @@ export function Footer() {
                   className="flex gap-3 text-sm text-white/50 hover:text-white transition-colors"
                 >
                   <Phone size={16} className="shrink-0 mt-0.5 text-brand" />
-                  {siteConfig.phone}
+                  {siteConfig.uan}
                 </a>
               </li>
               <li>

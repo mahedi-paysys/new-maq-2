@@ -6,46 +6,219 @@ import { Link } from 'react-router-dom'
 const galleryItems = [
   {
     id: 1,
-    src: '/assets/gallery-1.jpeg',
-    title: 'Elite Warehouse – Aerial View',
+    src: '/assets/elite-warehouse-systems/w1.jpeg',
+    // title: 'Elite Warehouse – Aerial View',
     category: 'Warehouse',
     span: 'col-span-2 row-span-2',
   },
   {
     id: 2,
-    src: '/assets/gallery-2.jpeg',
-    title: 'Site Overview',
+    src: '/assets/elite-warehouse-systems/w2.jpeg',
+    // title: 'Site Overview',
     category: 'Warehouse',
     span: 'col-span-1 row-span-1',
   },
   {
     id: 3,
-    src: '/assets/gallery-3.jpeg',
-    title: 'Aerial Perspective',
+    src: '/assets/elite-warehouse-systems/w3.jpeg',
+    // title: 'Aerial Perspective',
     category: 'Warehouse',
     span: 'col-span-1 row-span-1',
   },
   {
     id: 4,
-    src: '/assets/gallery-4.jpeg',
-    title: 'Night View – Warehouse',
-    category: 'Night Shots',
+    src: '/assets/elite-warehouse-systems/w4.jpeg',
+    // title: 'Night View – Warehouse',
+    category: 'Warehouse',
     span: 'col-span-1 row-span-1',
   },
   {
     id: 5,
-    src: '/assets/gallery-5.jpeg',
-    title: 'Office Tower – Night',
-    category: 'Night Shots',
+    src: '/assets/elite-warehouse-systems/w5.jpeg',
+    // title: 'Office Tower – Night',
+    category: 'Warehouse',
     span: 'col-span-1 row-span-1',
   },
   {
     id: 6,
-    src: '/assets/gallery-6.jpeg',
-    title: 'Warehouse Structure',
-    category: 'Structure',
+    src: '/assets/elite-warehouse-systems/w6.jpeg',
+    // title: 'Warehouse Structure',
+    category: 'Warehouse',
     span: 'col-span-2 row-span-1',
   },
+  {
+    id: 7,
+    src: '/assets/elite-warehouse-systems/w7.jpeg',
+    // title: 'Elite Warehouse – Aerial View',
+    category: 'Warehouse',
+    span: 'col-span-2 row-span-2',
+  },
+  {
+    id: 8,
+    src: '/assets/elite-warehouse-systems/w8.jpeg',
+    // title: 'Site Overview',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 9,
+    src: '/assets/elite-warehouse-systems/w9.jpeg',
+    // title: 'Aerial Perspective',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 10,
+    src: '/assets/elite-warehouse-systems/w10.jpeg',
+    // title: 'Night View – Warehouse',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 11,
+    src: '/assets/elite-warehouse-systems/w11.jpeg',
+    // title: 'Office Tower – Night',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 12,
+    src: '/assets/elite-warehouse-systems/w12.jpeg',
+    // title: 'Elite Warehouse – Aerial View',
+    category: 'Warehouse',
+    span: 'col-span-2 row-span-2',
+  },
+  {
+    id: 13,
+    src: '/assets/elite-warehouse-systems/w13.jpeg',
+    // title: 'Site Overview',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 14,
+    src: '/assets/elite-warehouse-systems/w14.jpeg',
+    // title: 'Aerial Perspective',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 15,
+    src: '/assets/elite-warehouse-systems/w15.jpeg',
+    // title: 'Night View – Warehouse',
+    category: 'Warehouse',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    id: 16, src: '/assets/nightshots/n1.jpeg',
+    // title: 'Office Tower 3',
+    category: 'Night Shots',
+    span: 'col-span-1 row-span-1'
+  },
+  {
+    id: 17,
+    src: '/assets/nightshots/n2.jpeg',
+    // title: 'Warehouse Structure 2',
+    category: 'Night Shots',
+    span: 'col-span-1 row-span-1'
+  },
+  { id: 18, 
+    src: '/assets/nightshots/n3.jpeg', 
+    // title: 'Elite Warehouse – Aerial View 2', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 19, 
+    src: '/assets/nightshots/n4.jpeg', 
+    // title: 'Site Overview 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 20, 
+    src: '/assets/nightshots/n5.jpeg', 
+    // title: 'Aerial Perspective 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 21, 
+    src: '/assets/nightshots/n6.jpeg', 
+    // title: 'Night View 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 22, 
+    src: '/assets/nightshots/n7.jpeg', 
+    // title: 'Office Tower 4', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 23, 
+    src: '/assets/nightshots/n8.jpeg', 
+    // title: 'Warehouse Structure 3', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 24, 
+    src: '/assets/nightshots/n9.jpeg', 
+    // title: 'Elite Warehouse – Aerial View 3', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 25, 
+    src: '/assets/nightshots/n10.jpeg', 
+    // title: 'Site Overview 5', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 26, 
+    src: '/assets/nightshots/n11.jpeg', 
+    // title: 'Aerial Perspective 5', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 27, 
+    src: '/assets/nightshots/n12.jpeg', 
+    // title: 'Night View 5', 
+    category: 'Night Shots', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 28, 
+    src: '/assets/structure/s1.jpeg', 
+    // title: 'Site Overview 6', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 29, 
+    src: '/assets/structure/s2.jpeg', 
+    // title: 'Warehouse Structure 4', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 30, 
+    src: '/assets/structure/s3.jpeg', 
+    // title: 'Elite Warehouse – Aerial View 4', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 31, 
+    src: '/assets/structure/s4.jpeg', 
+    // title: 'Site Overview 7', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 32, 
+    src: '/assets/structure/s5.jpeg', 
+    // title: 'Aerial Perspective 6', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+  { id: 33, 
+    src: '/assets/structure/s6.jpeg', 
+    // title: 'Night View 6', 
+    category: 'Structure', 
+    span: 'col-span-1 row-span-1' 
+  },
+
 ]
 
 const categories = ['All', 'Warehouse', 'Night Shots', 'Structure']
@@ -87,7 +260,7 @@ function Lightbox({ items, index, onClose, onNext, onPrev }: LightboxProps) {
         <div className="flex items-center justify-between mb-4 px-1">
           <div>
             <p className="text-xs tracking-widest uppercase text-brand">{item.category}</p>
-            <h3 className="text-white font-semibold">{item.title}</h3>
+            {/* <h3 className="text-white font-semibold">{item.title}</h3> */}
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs text-white/30 font-mono">
@@ -115,7 +288,7 @@ function Lightbox({ items, index, onClose, onNext, onPrev }: LightboxProps) {
           >
             <img
               src={item.src}
-              alt={item.title}
+              // alt={item.title}
               className="w-full object-contain"
               style={{ maxHeight: '70vh' }}
               loading="lazy"
@@ -225,11 +398,10 @@ export function GallerySection() {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 border ${
-                    activeCategory === cat
-                      ? 'bg-brand text-black border-brand'
-                      : 'border-ink/15 text-ink-muted hover:text-ink hover:border-ink/30 bg-transparent'
-                  }`}
+                  className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 border ${activeCategory === cat
+                    ? 'bg-brand text-black border-brand'
+                    : 'border-ink/15 text-ink-muted hover:text-ink hover:border-ink/30 bg-transparent'
+                    }`}
                 >
                   {cat}
                 </button>
@@ -256,7 +428,7 @@ export function GallerySection() {
                 >
                   <img
                     src={item.src}
-                    alt={item.title}
+                    // alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     loading="lazy"
                   />
@@ -279,7 +451,7 @@ export function GallerySection() {
                         <span className="inline-block text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full bg-brand/20 border border-brand/30 text-brand mb-2">
                           {item.category}
                         </span>
-                        <p className="text-sm font-semibold text-white leading-snug">{item.title}</p>
+                        {/* <p className="text-sm font-semibold text-white leading-snug">{item.title}</p> */}
                       </div>
                     </motion.div>
                   </div>

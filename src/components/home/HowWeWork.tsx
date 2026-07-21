@@ -22,7 +22,7 @@ const steps = [
   {
     num: '04',
     title: 'Handover & Delivery',
-    desc: 'On-time handover with zero compromise on quality. Full documentation, SBCA & LDA approvals, and our team remains available for ongoing support after delivery.',
+    desc: 'On time handover with zero compromise on quality. Full documentation, SBCA & LDA approvals, and our team remains available for ongoing support after delivery. make this paragraph as a professional one starting with "On time possesion of the properties with no compromise on quality with full documentation and approvals from govt bodies e.g. SBCA, LDA, KBCA etc full time customer support even after delivery.',
     detail: 'Final inspection · Legal documentation · Client walkthrough · Post-delivery support',
   },
 ]
@@ -42,7 +42,7 @@ function StepContent({ step, isActive }: { step: typeof steps[0]; isActive: bool
       <div className="flex items-start gap-6 group">
         <div className="shrink-0">
           <div className="relative w-16 h-16 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center">
-            <span className="text-xl font-bold text-brand font-mono">{step.num}</span>
+            <span className="text-xl font-bold text-brand">{step.num}</span>
           </div>
         </div>
 

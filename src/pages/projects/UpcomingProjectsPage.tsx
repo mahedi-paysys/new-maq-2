@@ -10,7 +10,7 @@ export function UpcomingProjectsPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80&auto=format&fit=crop"
+          src="/assets/elite-warehouse-systems/elite-warehouse-main.jpeg"
           alt="Upcoming Projects"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -17,7 +17,7 @@
 //           <Reveal className="lg:col-span-2">
 //             <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-canvas">
 //               <img
-//                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&auto=format&fit=crop"
+//                 src="/assets/Warehouse.jpeg"
 //                 alt="Muhammad Asim Quraishi, CEO"
 //                 className="w-full h-full object-cover"
 //               />

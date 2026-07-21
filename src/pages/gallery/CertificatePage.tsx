@@ -1,10 +1,16 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Reveal } from '@/components/ui/AnimatedSection'
 import { certificates } from '@/data/pages'
-import { Award, ArrowLeft } from 'lucide-react'
+import { ArrowLeft, X, ChevronLeft, ChevronRight, Expand } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export function CertificatePage() {
+  const [selected, setSelected] = useState<number | null>(null)
+
+  const prev = () => setSelected(i => i !== null ? (i - 1 + certificates.length) % certificates.length : null)
+  const next = () => setSelected(i => i !== null ? (i + 1) % certificates.length : null)
+
   return (
     <>
       {/* Hero */}
@@ -45,7 +51,7 @@ export function CertificatePage() {
         </div>
       </section>
 
-      {/* Cards */}
+      {/* Grid */}
       <section className="py-20 md:py-28">
         <div className="container-main">
           <Reveal>
@@ -58,60 +64,111 @@ export function CertificatePage() {
             </Link>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
             {certificates.map((cert, i) => (
-              <Reveal key={cert.id} delay={i * 0.1}>
+              <Reveal key={cert.id} delay={i * 0.06}>
                 <motion.div
-                  className="group relative p-8 rounded-3xl bg-white border border-border overflow-hidden cursor-default text-center"
-                  whileHover={{ y: -8, boxShadow: '0 20px 48px -12px rgba(245,184,0,0.15)' }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer bg-white border border-border"
+                  style={{ boxShadow: '0 2px 12px -4px rgba(21,20,15,0.08)' }}
+                  whileHover={{
+                    y: -8,
+                    boxShadow: '0 24px 48px -12px rgba(21,20,15,0.25), 0 0 0 1px rgba(245,184,0,0.3)',
+                  }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => setSelected(i)}
                 >
-                  {/* Hover glow */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{ background: 'radial-gradient(ellipse at top center, rgba(245,184,0,0.08) 0%, transparent 65%)' }}
-                  />
-                  {/* Top accent line */}
-                  <motion.div
-                    className="absolute top-0 left-1/2 -translate-x-1/2 h-[3px] bg-gradient-to-r from-transparent via-brand to-transparent rounded-full"
-                    initial={{ width: '0%' }}
-                    whileInView={{ width: '60%' }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: i * 0.1 + 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  {/* Image */}
+                  <img
+                    src={cert.image}
+                    alt={`Certificate ${i + 1}`}
+                    className="w-full h-full object-contain p-3 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                   />
 
-                  <div className="relative">
-                    {/* Icon */}
-                    <motion.div
-                      className="w-16 h-16 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-brand/20 group-hover:border-brand/40 transition-all duration-300"
-                      whileHover={{ rotate: 5, scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Award size={26} className="text-brand" />
-                    </motion.div>
+                  {/* Bottom gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
-                    {/* Year badge */}
-                    <span className="inline-block px-3 py-1 rounded-full bg-brand/10 text-brand text-[11px] font-bold uppercase tracking-[0.18em] mb-4">
-                      {cert.year}
-                    </span>
-
-                    <h2 className="text-lg font-bold text-ink mb-2 group-hover:text-brand transition-colors duration-300">
-                      {cert.title}
-                    </h2>
-                    <p className="text-sm text-ink-muted">{cert.issuer}</p>
+                  {/* Center expand icon */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="w-11 h-11 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-300">
+                      <Expand size={16} className="text-white" />
+                    </div>
                   </div>
 
-                  {/* Bottom shimmer */}
+                  {/* Corner accent line, animates in from bottom-left */}
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{ background: 'linear-gradient(90deg, transparent, rgba(245,184,0,0.4), transparent)' }}
+                    className="absolute bottom-0 left-0 h-[3px] bg-brand"
+                    initial={{ width: '0%' }}
+                    whileInView={{ width: '35%' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: i * 0.06 + 0.2 }}
                   />
+
+                  {/* Index badge */}
+                  <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-ink/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-[10px] font-bold text-white">{i + 1}</span>
+                  </div>
                 </motion.div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected !== null && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelected(null)}
+          >
+            <div className="absolute inset-0 bg-ink/90 backdrop-blur-md" />
+
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <X size={18} />
+            </button>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); prev() }}
+              className="absolute left-4 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-brand hover:text-black border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={selected}
+                src={certificates[selected].image}
+                alt={`Certificate ${selected + 1}`}
+                className="relative z-10 max-w-[90vw] max-h-[85vh] object-contain rounded-2xl"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </AnimatePresence>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); next() }}
+              className="absolute right-4 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-brand hover:text-black border border-white/20 flex items-center justify-center text-white transition-all"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+              <span className="text-xs text-white font-semibold tracking-widest">
+                {selected + 1} / {certificates.length}
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

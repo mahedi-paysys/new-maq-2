@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-import { projects, projectCategories } from '@/data/projects'
-import { cn } from '@/lib/utils'
+import { projects } from '@/data/projects'
+// import { cn } from '@/lib/utils'
 import type { ProjectCategory } from '@/types'
 
 export function ProjectsPage() {
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all')
+  // const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all')
+  const [activeCategory] = useState<ProjectCategory>('all')
+
 
   const filtered =
     activeCategory === 'all'
@@ -19,7 +21,7 @@ export function ProjectsPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80&auto=format&fit=crop"
+          src="/assets/how-we-work.jpeg"
           alt="Projects"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -55,7 +57,7 @@ export function ProjectsPage() {
       <section className="py-20 md:py-28">
         <div className="container-main">
 
-          {/* Filter tabs */}
+          {/* Filter tabs
           <motion.div
             className="flex flex-wrap gap-2 mb-14"
             initial={{ opacity: 0, y: 16 }}
@@ -77,7 +79,7 @@ export function ProjectsPage() {
                 {cat.label}
               </button>
             ))}
-          </motion.div>
+          </motion.div> */}
 
           {/* Grid */}
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
