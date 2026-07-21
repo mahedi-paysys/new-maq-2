@@ -18,7 +18,7 @@ const Page = forwardRef<HTMLDivElement, { number: number }>((props, ref) => {
         alt={`Page ${props.number}`}
         style={{ width: '100%', height: '100%', objectFit: 'fill', display: 'block' }}
         draggable={false}
-        onError={(e) => {
+        onError={() => {
           // agar image na mile to debug ke liye
           console.log(`Image not found: page${props.number}.jpg`)
         }}
