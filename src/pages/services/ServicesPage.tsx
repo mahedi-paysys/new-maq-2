@@ -10,7 +10,7 @@ const services = [
     href: '/services/elite-warehouse-rental',
     description: 'Flexible warehousing solutions with dedicated office space, 24/7 security and smart app integration.',
     icon: Layers,
-    image: '/assets/office tower night - Copy.JPG.jpeg',
+    image: '/assets/elite-warehouse-systems/eliteforrental.jpeg',
     tag: 'Rental',
   },
   {
@@ -18,7 +18,7 @@ const services = [
     href: '/services/elite-warehouse-sale',
     description: 'Own premium industrial units at CPEC corridor with SBCA & LDA approved freehold ownership.',
     icon: Building2,
-    image: '/assets/project-towers.png',
+    image: '/assets/elite-warehouse-systems/eliteforsale.jpeg',
     tag: 'For Sale',
   },
 ]
@@ -29,7 +29,7 @@ export function ServicesPage() {
       {/* ─── HERO with image overlay ─── */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <img
-          src="/assets/how-we-work.jpeg"
+          src="/assets/elite-warehouse-systems/w10.jpeg"
           alt="Services"
           className="absolute inset-0 w-full h-full object-cover"
         />

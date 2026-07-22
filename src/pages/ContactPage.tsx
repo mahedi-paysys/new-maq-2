@@ -39,7 +39,7 @@ export function ContactPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center overflow-hidden">
         <img
-          src="/assets/Warehouse.jpeg"
+          src="/assets/elite-warehouse-systems/w8.jpeg"
           alt="Contact"
           className="absolute inset-0 w-full h-full object-cover"
         />

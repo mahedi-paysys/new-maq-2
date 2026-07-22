@@ -27,7 +27,7 @@ const offerings = [
     icon: Shield,
     accent: '#f0b400',
     tags: ['24/7 CCTV', 'Security Guards', 'Fire Suppression', 'Checkpoints'],
-    image: '/assets/gallery-1.jpeg',
+    image: '/assets/elite-warehouse-systems/w15.jpeg',
   },
   {
     id: 'towers',
@@ -39,7 +39,7 @@ const offerings = [
     icon: Building2,
     accent: '#f0b400',
     tags: ['Office Suites', 'Conference Hall', 'Trading Room', 'Prayer Area'],
-    image: '/assets/gallery-5.jpeg',
+    image: '/assets/commercial-tower/11.jpeg',
   },
   {
     id: 'durability',
@@ -51,7 +51,7 @@ const offerings = [
     icon: Award,
     accent: '#f0b400',
     tags: ['Earthquake Resistant', 'Steel Framed', 'UPVC Roofing', 'Deep Pile'],
-    image: '/assets/how-we-work.jpeg',
+    image: '/assets/elite-warehouse-systems/w10.jpeg',
   },
   {
     id: 'structure',
@@ -75,7 +75,7 @@ const offerings = [
     icon: Smartphone,
     accent: '#f0b400',
     tags: ['Online Tracking', 'Camera Access', 'Virtual Tours', 'Smart Alerts'],
-    image: '/assets/about-us-section.jpeg',
+    image: '/assets/elite-warehouse-systems/elite-1.jpeg',
   },
 ]
 

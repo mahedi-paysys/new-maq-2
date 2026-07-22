@@ -15,7 +15,7 @@ const projects = [
     area: '8 Acres · 28 Units',
     description:
       "Pakistan's first private gated warehouse community — strategically positioned at the CPEC starting point. Each warehouse spans 850–1300 sq.yd with 30ft height, earthquake-resistant structure, and integrated smart technology.",
-    image: '/assets/project-warehouse.jpeg',
+    image: '/assets/elite-warehouse-systems/w6.jpeg',
     category: 'warehousing',
   },
   // {
@@ -29,7 +29,7 @@ const projects = [
   //   area: 'Landmark Development',
   //   description:
   //     'A landmark hospitality project where location, design and facilities are crafted with the same precision as service and guest experience. Premium 4-star accommodation redefining hospitality standards in Karachi.',
-  //   image: '/assets/project-elite-4star.jpeg',
+  //   image: '/assets/elite-warehouse-systems.w1.jpeg',
   //   category: 'construction',
   // },
   // {

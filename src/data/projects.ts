@@ -6,10 +6,10 @@ export const projects: Project[] = [
     slug: 'elite-ware-houses',
     title: 'Elite Ware Houses',
     category: 'warehousing',
-    status: 'upcoming',
+    status: 'completed',
     year: 2025,
     image:
-      '/assets/elite-warehouse-systems/elite-1.jpeg',
+      '/assets/elite-warehouse-systems/w15.jpeg',
     excerpt: 'Elite Ware Houses Architecture — Industrial excellence redefined.',
     description:
       'Pakistan\'s first and finest warehouse system with SBCA & LDA approval. Eight acres of premium warehousing with 28 units, each featuring dedicated office space and smart technology integration.',
@@ -24,7 +24,7 @@ export const projects: Project[] = [
   //   status: 'in-progress',
   //   year: 2024,
   //   image:
-  //     '/assets/Warehouse.jpeg',
+  //     '/assets/elite-warehouse-systems/w5.jpeg',
   //   excerpt: 'Elite 4 Star Construction — Premium hospitality development.',
   //   description:
   //     'We believe that a hotel\'s location, design and facilities are just as essential as its service concept, guest experience and the people caring for your guests. A landmark hospitality project currently under construction.',
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   //   status: 'in-progress',
   //   year: 2024,
   //   image:
-  //     '/assets/Warehouse.jpeg',
+  //     '/assets/elite-warehouse-systems/w6.jpeg',
   //   excerpt: 'Elite 5 Towers Construction — Vertical excellence in commercial development.',
   //   description:
   //     'A prestigious commercial tower development featuring integrated office suites, trading rooms, conference facilities and prayer areas — designed to exceed client expectations.',

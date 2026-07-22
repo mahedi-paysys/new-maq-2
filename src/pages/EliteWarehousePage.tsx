@@ -10,7 +10,7 @@ export function EliteWarehousePage() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         <img
-          src="/assets/Warehouse.jpeg"
+          src="/assets/elite-warehouse-systems/w9.jpeg"
           alt="Elite Warehouse Systems"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -22,10 +22,10 @@ export function EliteWarehousePage() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-8 h-px bg-brand" />
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+              {/* <div className="w-8 h-px bg-brand" /> */}
+              {/* <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
                 Upcoming Project
-              </span>
+              </span> */}
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight max-w-4xl">
               Elite Warehouse Systems
@@ -130,7 +130,7 @@ export function EliteWarehousePage() {
               <div className="relative rounded-3xl overflow-hidden group">
                 <div className="aspect-video overflow-hidden">
                   <img
-                    src="/assets/elite-warehouse-systems/elite-warehouse-main.jpeg"
+                    src="/assets/elite-warehouse-systems/w1.jpeg"
                     alt="Location map"
                     className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-1"
                   />

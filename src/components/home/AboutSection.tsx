@@ -78,7 +78,7 @@ export function AboutSection() {
             {/* Main image */}
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3] group/img">
               <motion.img
-                src="/assets/about-us-section.jpeg"
+                src="/assets/elite-warehouse-systems/elite-1.jpeg"
                 alt="MAQ Builders – Professional Construction Team"
                 className="w-full h-full object-cover"
                 loading="lazy"

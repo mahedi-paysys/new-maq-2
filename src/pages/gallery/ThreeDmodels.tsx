@@ -26,7 +26,7 @@ export function ThreeDmodels() {
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[320px] flex items-center overflow-hidden">
         <img
-          src="/assets/how-we-work.jpeg"
+          src="/assets/elite-warehouse-systems/w10.jpeg"
           alt="3D Models"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.45)' }}

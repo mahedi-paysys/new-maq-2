@@ -20,7 +20,7 @@ import { GalleryPage } from '@/pages/gallery/GalleryPage'
 import { SiteGalleryPage } from '@/pages/gallery/SiteGalleryPage'
 import { ExpoExhibitionPage } from '@/pages/gallery/ExpoExhibitionPage'
 import { CertificatePage } from '@/pages/gallery/CertificatePage'
-import { UpcomingProjectsPage } from '@/pages/projects/UpcomingProjectsPage'
+// import { UpcomingProjectsPage } from '@/pages/projects/UpcomingProjectsPage'
 import { BlogsPage } from '@/pages/BlogsPage'
 import { ThreeDmodels } from '@/pages/gallery/ThreeDmodels'
 // route:
@@ -55,7 +55,7 @@ export function AppRouter() {
             <Route path="/gallery/3d-models" element={withTransition(<ThreeDmodels />)} />
             <Route path="/projects" element={withTransition(<ProjectsPage />)} />
             <Route path="/projects/elite-warehouse-systems" element={withTransition(<EliteWarehousePage />)} />
-            <Route path="/projects/upcoming-projects" element={withTransition(<UpcomingProjectsPage />)} />
+            {/* <Route path="/projects/upcoming-projects" element={withTransition(<UpcomingProjectsPage />)} /> */}
             <Route path="/projects/:slug" element={withTransition(<ProjectDetailPage />)} />
             <Route path="/elite-warehouse-systems" element={withTransition(<EliteWarehousePage />)} />
 

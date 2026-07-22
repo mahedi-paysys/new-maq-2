@@ -9,7 +9,7 @@ export function BlogsPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center overflow-hidden">
         <img
-          src="/assets/gallery-1.jpeg"
+          src="/assets/elite-warehouse-systems/w15.jpeg"
           alt="Blog"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -21,7 +21,7 @@ export function ProjectsPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-center overflow-hidden">
         <img
-          src="/assets/how-we-work.jpeg"
+          src="/assets/elite-warehouse-systems/w10.jpeg"
           alt="Projects"
           className="absolute inset-0 w-full h-full object-cover"
         />

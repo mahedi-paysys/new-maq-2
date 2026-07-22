@@ -19,9 +19,9 @@ export const siteConfig = {
     whatsapp: 'https://wa.me/923001627627'
     },
   assets: {
-    logo: '/assets/logo.png',
-    logoDark: '/assets/logo-dark.png',   // ← ye line add karo
-    heroVideo: '/assets/hero_section_video.mp4',
+    logo: '/assets/home/logo.png',
+    logoDark: '/assets/home/logo-dark.png',   // ← ye line add karo
+    heroVideo: '/assets/home/hero_section_video.mp4',
   },
 }
 
@@ -58,7 +58,7 @@ export const navigation: NavItem[] = [
     href: '/projects',
     children: [
       { label: 'Elite Warehouse Systems', href: '/projects/elite-warehouse-systems' },
-      { label: 'Upcoming Projects', href: '/projects/upcoming-projects' },
+      // { label: 'Upcoming Projects', href: '/projects/upcoming-projects' },
     ],
   },
   { label: 'Blogs', href: '/blogs' },
@@ -68,7 +68,7 @@ export const navigation: NavItem[] = [
 export const heroSlides = [
   {
     id: 'elite-warehouse',
-    eyebrow: 'Upcoming Projects',
+    eyebrow: 'Projects',
     title: 'Elite Warehouse Systems',
     subtitle: 'The Biggest Construction In The Real World',
     cta: 'Contact Us',
@@ -89,8 +89,8 @@ export const heroSlides = [
     title: 'Elite Warehouse Systems',
     subtitle:
       'MAQ GROUP OF COMPANIES is proud to announce Elite Warehouse Systems — a spectacular industrial solution.',
-    cta: 'Upcoming Projects',
-    ctaLink: '/projects/upcoming-projects',
+    cta: 'Projects',
+    ctaLink: '/projects/elite-warehouse-systems',
   },
 ]
 
@@ -174,28 +174,28 @@ export const whyChooseUs = [
     title: 'Exclusive Portfolio Access',
     description:
       'SBCA & LDA approved projects with distinctive state-of-the-art industrial amenities — Pakistan\'s first and finest warehouse system.',
-    image: '/assets/Warehouse.jpeg',
+    image: '/assets/elite-warehouse-systems/w1.jpeg',
   },
   {
     id: 'transparency',
     title: 'Certified Transparency & Assurance',
     description:
       'MAQ Builders is synonymous with excellence, quality, commitment and personalized service with a reputation of integrity.',
-    image: '/assets/Warehouse.jpeg',
+    image: '/assets/elite-warehouse-systems/w2.jpeg',
   },
   {
     id: 'negotiation',
     title: 'Strategic Price Negotiation',
     description:
       'Professional approach to constructing exceptional quality projects with innovative ideas in the construction industry.',
-    image: '/assets/Warehouse.jpeg',
+    image: '/assets/elite-warehouse-systems/w3.jpeg',
   },
   {
     id: 'acquisition',
     title: 'White-Glove Acquisition Service',
     description:
       '24/7 online support with dedicated teams ensuring seamless experience from inquiry to project delivery.',
-    image: '/assets/Warehouse.jpeg',
+    image: '/assets/elite-warehouse-systems/w4.jpeg',
   },
 ]
 

@@ -27,7 +27,7 @@ export function ExpoExhibitionPage() {
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[320px] flex items-center overflow-hidden">
         <img
-          src="/assets/how-we-work.jpeg"
+          src="/assets/elite-warehouse-systems/w10.jpeg"
           alt="Expo Exhibition"
           className="absolute inset-0 w-full h-full object-cover"
         />

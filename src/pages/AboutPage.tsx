@@ -44,7 +44,7 @@ export function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
               <motion.img
-                src="/assets/ceo.jpeg"
+                src="/assets/home/ceo.jpeg"
                 alt="MAQ Builders construction site"
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.05 }}

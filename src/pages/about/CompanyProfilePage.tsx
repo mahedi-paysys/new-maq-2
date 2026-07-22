@@ -37,7 +37,7 @@
 //           <Reveal delay={0.15}>
 //             <div className="aspect-video rounded-3xl overflow-hidden">
 //               <img
-//                 src="/assets/Warehouse.jpeg"
+//                 src="/assets/elite-warehouse-systems/w1.jpeg"
 //                 alt="MAQ Builders projects"
 //                 className="w-full h-full object-cover"
 //               />

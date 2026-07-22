@@ -15,7 +15,7 @@ export function CTABanner() {
         >
           <div className="absolute inset-0 opacity-20">
             <img
-              src="/assets/Warehouse.jpeg"
+              src="/assets/elite-warehouse-systems/w9.jpeg"
               alt=""
               className="w-full h-full object-cover"
             />

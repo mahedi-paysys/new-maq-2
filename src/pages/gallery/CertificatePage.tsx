@@ -16,7 +16,7 @@ export function CertificatePage() {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[360px] flex items-center overflow-hidden">
         <img
-          src="/assets/about-us-section.jpeg"
+          src="/assets/elite-warehouse-systems/elite-1.jpeg"
           alt="Certificates"
           className="absolute inset-0 w-full h-full object-cover"
         />

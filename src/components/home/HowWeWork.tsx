@@ -168,7 +168,7 @@ export function HowWeWork() {
               transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
               <img
-                src="/assets/how-we-work.jpeg"
+                src="/assets/elite-warehouse-systems/w10.jpeg"
                 alt="MAQ Group construction process"
                 className="w-full h-full object-cover"
                 loading="lazy"

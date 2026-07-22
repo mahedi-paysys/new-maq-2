@@ -378,7 +378,7 @@ export const blogPosts = [
     title: 'Elite Warehouse Systems — Pakistan\'s Finest Industrial Solution',
     excerpt: 'MAQ Builders announces SBCA & LDA approved warehouse development on M-10 motorway.',
     date: 'June 2025',
-    image: '/assets/1002.jpg.jpeg',
+    image: '/assets/elite-warehouse-systems/w1.jpeg',
   },
   {
     id: '2',
@@ -386,7 +386,7 @@ export const blogPosts = [
     title: 'Strategic Location at CPEC Starting Point',
     excerpt: 'Why M-10 motorway positioning gives Elite Warehouse Systems a logistics edge.',
     date: 'May 2025',
-    image: '/assets/eliteforrental.jpeg',
+    image: '/assets/elite-warehouse-systems/eliteforrental.jpeg',
   },
   {
     id: '3',
@@ -398,33 +398,33 @@ export const blogPosts = [
   },
 ]
 
-export const upcomingProjectsList = [
-  {
-    id: '1',
-    title: 'Elite Warehouse Phase 2',
-    status: 'Planning',
-    location: 'M-10 Motorway, Karachi',
-    description: 'Expansion of Pakistan\'s first SBCA approved warehouse system with additional units.',
-    image: '/assets/elite-warehouse-systems/elite-warehouse-main.jpeg',
-  },
-  // {
-  //   id: '2',
-  //   title: 'Elite 5 Towers',
-  //   status: 'In Construction',
-  //   location: 'Karachi, Pakistan',
-  //   description: 'Commercial tower with integrated office suites, trading rooms and conference facilities.',
-  //   image: '/assets/Warehouse.jpeg',
-  // },
-  // {
-  //   id: '3',
-  //   title: 'Elite 4 Star Hotel',
-  //   status: 'In Construction',
-  //   location: 'Karachi, Pakistan',
-  //   description: 'Premium hospitality development with modern luxury design and guest experience focus.',
-  //   image: '/assets/Warehouse.jpeg',
-  // },
+// export const upcomingProjectsList = [
+//   {
+//     id: '1',
+//     title: 'Elite Warehouse Phase 2',
+//     status: 'Planning',
+//     location: 'M-10 Motorway, Karachi',
+//     description: 'Expansion of Pakistan\'s first SBCA approved warehouse system with additional units.',
+//     image: '/assets/elite-warehouse-systems/elite-warehouse-main.jpeg',
+//   },
+//   // {
+//   //   id: '2',
+//   //   title: 'Elite 5 Towers',
+//   //   status: 'In Construction',
+//   //   location: 'Karachi, Pakistan',
+//   //   description: 'Commercial tower with integrated office suites, trading rooms and conference facilities.',
+//   //   image: '/assets/elite-warehouse-systems/w5.jpeg',
+//   // },
+//   // {
+//   //   id: '3',
+//   //   title: 'Elite 4 Star Hotel',
+//   //   status: 'In Construction',
+//   //   location: 'Karachi, Pakistan',
+//   //   description: 'Premium hospitality development with modern luxury design and guest experience focus.',
+//   //   image: '/assets/elite-warehouse-systems/w6.jpeg',
+//   // },
 
-]
+// ]
 
 export const rentalFeatures = [
   'Flexible lease terms from 1 to 10 years',
